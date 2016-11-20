@@ -1,0 +1,25 @@
+HKCR
+{
+	Garmin.D302_Trk_Point_Type.1 = s 'D302_Trk_Point_Type Class'
+	{
+		CLSID = s '{9366A030-F925-4B71-BBBE-D7F058EF1AC6}'
+	}
+	Garmin.D302_Trk_Point_Type = s 'D302_Trk_Point_Type Class'
+	{
+		CLSID = s '{9366A030-F925-4B71-BBBE-D7F058EF1AC6}'
+		CurVer = s 'Garmin.D302_Trk_Point_Type.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {9366A030-F925-4B71-BBBE-D7F058EF1AC6} = s 'D302_Trk_Point_Type Class'
+		{
+			ProgID = s 'Garmin.D302_Trk_Point_Type.1'
+			VersionIndependentProgID = s 'Garmin.D302_Trk_Point_Type'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}

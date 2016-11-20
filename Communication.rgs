@@ -1,0 +1,26 @@
+HKCR
+{
+	Garmin.Communication.1 = s 'Communication Class'
+	{
+		CLSID = s '{F7ABA92D-DA5A-4522-A60F-0F29C103E299}'
+	}
+	Garmin.Communication = s 'Communication Class'
+	{
+		CLSID = s '{F7ABA92D-DA5A-4522-A60F-0F29C103E299}'
+		CurVer = s 'Garmin.Communication.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {F7ABA92D-DA5A-4522-A60F-0F29C103E299} = s 'Communication Class'
+		{
+			ProgID = s 'Garmin.Communication.1'
+			VersionIndependentProgID = s 'Garmin.Communication'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}

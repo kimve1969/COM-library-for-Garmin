@@ -1,0 +1,26 @@
+HKCR
+{
+	Garmin.D210_Rte_Link_Type.1 = s 'D210_Rte_Link_Type Class'
+	{
+		CLSID = s '{EFF2F681-0349-4FD3-811A-F6882C169620}'
+	}
+	Garmin.D210_Rte_Link_Type = s 'D210_Rte_Link_Type Class'
+	{
+		CLSID = s '{EFF2F681-0349-4FD3-811A-F6882C169620}'
+		CurVer = s 'Garmin.D210_Rte_Link_Type.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {EFF2F681-0349-4FD3-811A-F6882C169620} = s 'D210_Rte_Link_Type Class'
+		{
+			ProgID = s 'Garmin.D210_Rte_Link_Type.1'
+			VersionIndependentProgID = s 'Garmin.D210_Rte_Link_Type'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}

@@ -1,0 +1,26 @@
+HKCR
+{
+	Garmin.D101_Wpt_Type.1 = s 'D101_Wpt_Type Class'
+	{
+		CLSID = s '{43F46BEF-7111-4DE7-AF7D-5E99F69B7040}'
+	}
+	Garmin.D101_Wpt_Type = s 'D101_Wpt_Type Class'
+	{
+		CLSID = s '{43F46BEF-7111-4DE7-AF7D-5E99F69B7040}'
+		CurVer = s 'Garmin.D101_Wpt_Type.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {43F46BEF-7111-4DE7-AF7D-5E99F69B7040} = s 'D101_Wpt_Type Class'
+		{
+			ProgID = s 'Garmin.D101_Wpt_Type.1'
+			VersionIndependentProgID = s 'Garmin.D101_Wpt_Type'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}

@@ -1,0 +1,26 @@
+HKCR
+{
+	Garmin.D301_Trk_Point_Type.1 = s 'D301_Trk_Point_Type Class'
+	{
+		CLSID = s '{28D9CC60-6F9A-4CC9-BC0C-290CA58C3E0B}'
+	}
+	Garmin.D301_Trk_Point_Type = s 'D301_Trk_Point_Type Class'
+	{
+		CLSID = s '{28D9CC60-6F9A-4CC9-BC0C-290CA58C3E0B}'
+		CurVer = s 'Garmin.D301_Trk_Point_Type.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {28D9CC60-6F9A-4CC9-BC0C-290CA58C3E0B} = s 'D301_Trk_Point_Type Class'
+		{
+			ProgID = s 'Garmin.D301_Trk_Point_Type.1'
+			VersionIndependentProgID = s 'Garmin.D301_Trk_Point_Type'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}

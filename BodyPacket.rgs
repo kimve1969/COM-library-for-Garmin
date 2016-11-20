@@ -1,0 +1,26 @@
+HKCR
+{
+	Garmin.BodyPacket.1 = s 'BodyPacket Class'
+	{
+		CLSID = s '{E2C4B620-60DE-40F5-9E8D-CAB31B6456F6}'
+	}
+	Garmin.BodyPacket = s 'BodyPacket Class'
+	{
+		CLSID = s '{E2C4B620-60DE-40F5-9E8D-CAB31B6456F6}'
+		CurVer = s 'Garmin.BodyPacket.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {E2C4B620-60DE-40F5-9E8D-CAB31B6456F6} = s 'BodyPacket Class'
+		{
+			ProgID = s 'Garmin.BodyPacket.1'
+			VersionIndependentProgID = s 'Garmin.BodyPacket'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}

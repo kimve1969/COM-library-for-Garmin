@@ -1,0 +1,26 @@
+HKCR
+{
+	Garmin.D200_Rte_Hdr_Type.1 = s 'D200_Rte_Hdr_Type Class'
+	{
+		CLSID = s '{D3EA58A3-4AC8-4078-97FC-B1B4455EF917}'
+	}
+	Garmin.D200_Rte_Hdr_Type = s 'D200_Rte_Hdr_Type Class'
+	{
+		CLSID = s '{D3EA58A3-4AC8-4078-97FC-B1B4455EF917}'
+		CurVer = s 'Garmin.D200_Rte_Hdr_Type.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {D3EA58A3-4AC8-4078-97FC-B1B4455EF917} = s 'D200_Rte_Hdr_Type Class'
+		{
+			ProgID = s 'Garmin.D200_Rte_Hdr_Type.1'
+			VersionIndependentProgID = s 'Garmin.D200_Rte_Hdr_Type'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}

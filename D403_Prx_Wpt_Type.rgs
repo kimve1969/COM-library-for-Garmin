@@ -1,0 +1,25 @@
+HKCR
+{
+	Garmin.D403_Prx_Wpt_Type.1 = s 'D403_Prx_Wpt_Type Class'
+	{
+		CLSID = s '{B549E0FF-8B83-4F4F-A235-67F497F556AA}'
+	}
+	Garmin.D403_Prx_Wpt_Type = s 'D403_Prx_Wpt_Type Class'
+	{
+		CLSID = s '{B549E0FF-8B83-4F4F-A235-67F497F556AA}'
+		CurVer = s 'Garmin.D403_Prx_Wpt_Type.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B549E0FF-8B83-4F4F-A235-67F497F556AA} = s 'D403_Prx_Wpt_Type Class'
+		{
+			ProgID = s 'Garmin.D403_Prx_Wpt_Type.1'
+			VersionIndependentProgID = s 'Garmin.D403_Prx_Wpt_Type'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}
