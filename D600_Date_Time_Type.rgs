@@ -1,0 +1,26 @@
+HKCR
+{
+	Garmin.D600_Date_Time_Type.1 = s 'D600_Date_Time_Type Class'
+	{
+		CLSID = s '{4A96C561-C3DC-4E9C-B2D9-985C6D9853AE}'
+	}
+	Garmin.D600_Date_Time_Type = s 'D600_Date_Time_Type Class'
+	{
+		CLSID = s '{4A96C561-C3DC-4E9C-B2D9-985C6D9853AE}'
+		CurVer = s 'Garmin.D600_Date_Time_Type.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {4A96C561-C3DC-4E9C-B2D9-985C6D9853AE} = s 'D600_Date_Time_Type Class'
+		{
+			ProgID = s 'Garmin.D600_Date_Time_Type.1'
+			VersionIndependentProgID = s 'Garmin.D600_Date_Time_Type'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}

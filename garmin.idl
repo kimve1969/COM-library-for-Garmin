@@ -1,0 +1,1608 @@
+// garmin.idl : IDL source for garmin.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (garmin.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	typedef enum _BODYPACKET_ACCESS
+	{
+		ACCESS_OR,
+		ACCESS_OW,
+		ACCESS_RW
+	} BODYPACKET_ACCESS;
+
+	////////////////////////////////////////////////////////////////////////////////////////
+	//	Symbol_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	typedef [v1_enum] enum
+	{
+		/*---------------------------------------------------------------
+		Symbols for marine (group 0...0-8191...bits 15-13=000).
+		---------------------------------------------------------------*/
+		sym_anchor = 0, /* white anchor symbol */
+		sym_bell = 1, /* white bell symbol */
+		sym_diamond_grn = 2, /* green diamond symbol */
+		sym_diamond_red = 3, /* red diamond symbol */
+		sym_dive1 = 4, /* diver down flag 1 */
+		sym_dive2 = 5, /* diver down flag 2 */
+		sym_dollar = 6, /* white dollar symbol */
+		sym_fish = 7, /* white fish symbol */
+		sym_fuel = 8, /* white fuel symbol */
+		sym_horn = 9, /* white horn symbol */
+		sym_house = 10, /* white house symbol */
+		sym_knife = 11, /* white knife & fork symbol */
+		sym_light = 12, /* white light symbol */
+		sym_mug = 13, /* white mug symbol */
+		sym_skull = 14, /* white skull and crossbones symbol*/
+		sym_square_grn = 15, /* green square symbol */
+		sym_square_red = 16, /* red square symbol */
+		sym_wbuoy = 17, /* white buoy waypoint symbol */
+		sym_wpt_dot = 18, /* waypoint dot */
+		sym_wreck = 19, /* white wreck symbol */
+		sym_null = 20, /* null symbol (transparent) */
+		sym_mob = 21, /* man overboard symbol */
+		/*------------------------------------------------------
+		marine navaid symbols
+		------------------------------------------------------*/
+		sym_buoy_ambr = 22, /* amber map buoy symbol */
+		sym_buoy_blck = 23, /* black map buoy symbol */
+		sym_buoy_blue = 24, /* blue map buoy symbol */
+		sym_buoy_grn = 25, /* green map buoy symbol */
+		sym_buoy_grn_red = 26, /* green/red map buoy symbol */
+		sym_buoy_grn_wht = 27, /* green/white map buoy symbol */
+		sym_buoy_orng = 28, /* orange map buoy symbol */
+		sym_buoy_red = 29, /* red map buoy symbol */
+		sym_buoy_red_grn = 30, /* red/green map buoy symbol */
+		sym_buoy_red_wht = 31, /* red/white map buoy symbol */
+		sym_buoy_violet = 32, /* violet map buoy symbol */
+		sym_buoy_wht = 33, /* white map buoy symbol */
+		sym_buoy_wht_grn = 34, /* white/green map buoy symbol */
+		sym_buoy_wht_red = 35, /* white/red map buoy symbol */
+		sym_dot = 36, /* white dot symbol */
+		sym_rbcn = 37, /* radio beacon symbol */
+		/*------------------------------------------------------
+		leave space for more navaids (up to 128 total)
+		------------------------------------------------------*/
+		sym_boat_ramp = 150, /* boat ramp symbol */
+		sym_camp = 151, /* campground symbol */
+		sym_restrooms = 152, /* restrooms symbol */
+		sym_showers = 153, /* shower symbol */
+		sym_drinking_wtr = 154, /* drinking water symbol */
+		sym_phone = 155, /* telephone symbol */
+		sym_1st_aid = 156, /* first aid symbol */
+		sym_info = 157, /* information symbol */
+		sym_parking = 158, /* parking symbol */
+		sym_park = 159, /* park symbol */
+		sym_picnic = 160, /* picnic symbol */
+		sym_scenic = 161, /* scenic area symbol */
+		sym_skiing = 162, /* skiing symbol */
+		sym_swimming = 163, /* swimming symbol */
+		sym_dam = 164, /* dam symbol */
+		sym_controlled = 165, /* controlled area symbol */
+		sym_danger = 166, /* danger symbol */
+		sym_restricted = 167, /* restricted area symbol */
+		sym_null_2 = 168, /* null symbol */
+		sym_ball = 169, /* ball symbol */
+		
+		sym_car = 170, /* car symbol */
+		sym_deer = 171, /* deer symbol */
+		sym_shpng_cart = 172, /* shopping cart symbol */
+		sym_lodging = 173, /* lodging symbol */
+		sym_mine = 174, /* mine symbol */
+		sym_trail_head = 175, /* trail head symbol */
+		sym_truck_stop = 176, /* truck stop symbol */
+		sym_user_exit = 177, /* user exit symbol */
+		sym_flag = 178, /* flag symbol */
+		sym_circle_x = 179, /* circle with x in the center */
+		sym_open_24hr = 180, /* open 24 hours symbol */
+		sym_fhs_facility = 181, /* U Fishing Hot Spots™ Facility */
+		sym_bot_cond = 182, /* Bottom Conditions */
+		sym_tide_pred_stn = 183, /* Tide/Current Prediction Station */
+		sym_anchor_prohib = 184, /* U anchor prohibited symbol */
+		sym_beacon = 185, /* U beacon symbol */
+		sym_coast_guard = 186, /* U coast guard symbol */
+		sym_reef = 187, /* U reef symbol */
+		sym_weedbed = 188, /* U weedbed symbol */
+		sym_dropoff = 189, /* U dropoff symbol */
+		sym_dock = 190, /* U dock symbol */
+		sym_marina = 191, /* U marina symbol */
+		sym_bait_tackle = 192, /* U bait and tackle symbol */
+		sym_stump = 193, /* U stump symbol */
+		/*---------------------------------------------------------------
+		Symbols for land (group 1...8192-16383...bits 15-13=001).
+		---------------------------------------------------------------*/
+		sym_is_hwy = 8192, /* interstate hwy symbol */
+		sym_us_hwy = 8193, /* us hwy symbol */
+		sym_st_hwy = 8194, /* state hwy symbol */
+		sym_mi_mrkr = 8195, /* mile marker symbol */
+		sym_trcbck = 8196, /* TracBack (feet) symbol */
+		sym_golf = 8197, /* golf symbol */
+		sym_sml_cty = 8198, /* small city symbol */
+		sym_med_cty = 8199, /* medium city symbol */
+		sym_lrg_cty = 8200, /* large city symbol */
+		sym_freeway = 8201, /* intl freeway hwy symbol */
+		sym_ntl_hwy = 8202, /* intl national hwy symbol */
+		sym_cap_cty = 8203, /* capitol city symbol (star) */
+		sym_amuse_pk = 8204, /* amusement park symbol */
+		sym_bowling = 8205, /* bowling symbol */
+		sym_car_rental = 8206, /* car rental symbol */
+		sym_car_repair = 8207, /* car repair symbol */
+		sym_fastfood = 8208, /* fast food symbol */
+		sym_fitness = 8209, /* fitness symbol */
+		sym_movie = 8210, /* movie symbol */
+		sym_museum = 8211, /* museum symbol */
+		sym_pharmacy = 8212, /* pharmacy symbol */
+		sym_pizza = 8213, /* pizza symbol */
+		sym_post_ofc = 8214, /* post office symbol */
+		sym_rv_park = 8215, /* RV park symbol */
+		sym_school = 8216, /* school symbol */
+		sym_stadium = 8217, /* stadium symbol */
+		sym_store = 8218, /* dept. store symbol */
+		sym_zoo = 8219, /* zoo symbol */
+		sym_gas_plus = 8220, /* convenience store symbol */
+		sym_faces = 8221, /* live theater symbol */
+		sym_ramp_int = 8222, /* ramp intersection symbol */
+		sym_st_int = 8223, /* street intersection symbol */
+		sym_weigh_sttn = 8226, /* inspection/weigh station symbol */
+		sym_toll_booth = 8227, /* toll booth symbol */
+		sym_elev_pt = 8228, /* elevation point symbol */
+		sym_ex_no_srvc = 8229, /* exit without services symbol */
+		sym_geo_place_mm = 8230, /* Geographic place name, man-made */
+		sym_geo_place_wtr = 8231, /* Geographic place name, water */
+		sym_geo_place_lnd = 8232, /* Geographic place name, land */
+		sym_bridge = 8233, /* bridge symbol */
+		sym_building = 8234, /* building symbol */
+		sym_cemetery = 8235, /* cemetery symbol */		
+		sym_church = 8236, /* church symbol */
+		sym_civil = 8237, /* civil location symbol */
+		sym_crossing = 8238, /* crossing symbol */
+		sym_hist_town = 8239, /* historical town symbol */
+		sym_levee = 8240, /* levee symbol */
+		sym_military = 8241, /* military location symbol */
+		sym_oil_field = 8242, /* oil field symbol */
+		sym_tunnel = 8243, /* tunnel symbol */
+		sym_beach = 8244, /* beach symbol */
+		sym_forest = 8245, /* forest symbol */
+		sym_summit = 8246, /* summit symbol */
+		sym_lrg_ramp_int = 8247, /* large ramp intersection symbol */
+		sym_lrg_ex_no_srvc = 8248, /* large exit without services smbl */
+		sym_badge = 8249, /* police/official badge symbol */
+		sym_cards = 8250, /* gambling/casino symbol */
+		sym_snowski = 8251, /* snow skiing symbol */
+		sym_iceskate = 8252, /* ice skating symbol */
+		sym_wrecker = 8253, /* tow truck (wrecker) symbol */
+		sym_border = 8254, /* border crossing (port of entry) */
+		sym_geocache = 8255, /* geocache location */
+		sym_geocache_fnd = 8256, /* found geocache */
+		sym_cntct_smiley = 8257, /* Rino contact symbol, “smiley” */
+		sym_cntct_ball_cap = 8258, /* Rino contact symbol, “ball cap” */
+		sym_cntct_big_ears = 8259, /* Rino contact symbol, “big ear” */
+		sym_cntct_spike = 8260, /* Rino contact symbol, “spike” */
+		sym_cntct_goatee = 8261, /* Rino contact symbol, “goatee” */
+		sym_cntct_afro = 8262, /* Rino contact symbol, “afro” */
+		sym_cntct_dreads = 8263, /* Rino contact symbol, “dreads” */
+		sym_cntct_female1 = 8264, /* Rino contact symbol, “female 1” */
+		sym_cntct_female2 = 8265, /* Rino contact symbol, “female 2” */
+		sym_cntct_female3 = 8266, /* Rino contact symbol, “female 3” */
+		sym_cntct_ranger = 8267, /* Rino contact symbol, “ranger” */
+		sym_cntct_kung_fu = 8268, /* Rino contact symbol, “kung fu” */
+		sym_cntct_sumo = 8269, /* Rino contact symbol, “sumo” */
+		sym_cntct_pirate = 8270, /* Rino contact symbol, “pirate” */
+		sym_cntct_biker = 8271, /* Rino contact symbol, “biker” */
+		sym_cntct_alien = 8272, /* Rino contact symbol, “alien” */
+		sym_cntct_bug = 8273, /* Rino contact symbol, “bug” */
+		sym_cntct_cat = 8274, /* Rino contact symbol, “cat” */
+		sym_cntct_dog = 8275, /* Rino contact symbol, “dog” */
+		sym_cntct_pig = 8276, /* Rino contact symbol, “pig” */
+		sym_hydrant = 8282, /* water hydrant symbol */
+		sym_flag_blue = 8284, /* blue flag symbol */
+		sym_flag_green = 8285, /* green flag symbol */
+		sym_flag_red = 8286, /* red flag symbol */
+		sym_pin_blue = 8287, /* blue pin symbol */
+		sym_pin_green = 8288, /* green pin symbol */
+		sym_pin_red = 8289, /* red pin symbol */
+		sym_block_blue = 8290, /* blue block symbol */
+		sym_block_green = 8291, /* green block symbol */
+		sym_block_red = 8292, /* red block symbol */
+		sym_bike_trail = 8293, /* bike trail symbol */
+		sym_circle_red = 8294, /* red circle symbol */
+		sym_circle_green = 8295, /* green circle symbol */
+		sym_circle_blue = 8296, /* blue circle symbol */
+		sym_diamond_blue = 8299, /* blue diamond symbol */
+		sym_oval_red = 8300, /* red block symbol */
+		sym_oval_green = 8301, /* green block symbol */
+		sym_oval_blue = 8302, /* blue block symbol */
+		sym_rect_red = 8303, /* red block symbol */
+		sym_rect_green = 8304, /* green block symbol */
+		sym_rect_blue = 8305, /* blue block symbol */
+		sym_square_blue = 8308, /* blue square symbol */
+		sym_letter_a_red = 8309, /* red letter ‘A’ symbol */
+		sym_letter_b_red = 8310, /* red letter ‘B’ symbol */
+		sym_letter_c_red = 8311, /* red letter ‘C’ symbol */
+		sym_letter_d_red = 8312, /* red letter ‘D’ symbol */
+		sym_letter_a_green = 8313, /* green letter ‘A’ symbol */
+		sym_letter_c_green = 8314, /* green letter ‘C’ symbol */
+		sym_letter_b_green = 8315, /* green letter ‘B’ symbol */
+		sym_letter_d_green = 8316, /* green letter ‘D’ symbol */		
+		sym_letter_a_blue = 8317, /* blue letter ‘A’ symbol */
+		sym_letter_b_blue = 8318, /* blue letter ‘B’ symbol */
+		sym_letter_c_blue = 8319, /* blue letter ‘C’ symbol */
+		sym_letter_d_blue = 8320, /* blue letter ‘D’ symbol */
+		sym_number_0_red = 8321, /* red number ‘0’ symbol */
+		sym_number_1_red = 8322, /* red number ‘1’ symbol */
+		sym_number_2_red = 8323, /* red number ‘2’ symbol */
+		sym_number_3_red = 8324, /* red number ‘3’ symbol */
+		sym_number_4_red = 8325, /* red number ‘4’ symbol */
+		sym_number_5_red = 8326, /* red number ‘5’ symbol */
+		sym_number_6_red = 8327, /* red number ‘6’ symbol */
+		sym_number_7_red = 8328, /* red number ‘7’ symbol */
+		sym_number_8_red = 8329, /* red number ‘8’ symbol */
+		sym_number_9_red = 8330, /* red number ‘9’ symbol */
+		sym_number_0_green = 8331, /* green number ‘0’ symbol */
+		sym_number_1_green = 8332, /* green number ‘1’ symbol */
+		sym_number_2_green = 8333, /* green number ‘2’ symbol */
+		sym_number_3_green = 8334, /* green number ‘3’ symbol */
+		sym_number_4_green = 8335, /* green number ‘4’ symbol */
+		sym_number_5_green = 8336, /* green number ‘5’ symbol */
+		sym_number_6_green = 8337, /* green number ‘6’ symbol */
+		sym_number_7_green = 8338, /* green number ‘7’ symbol */
+		sym_number_8_green = 8339, /* green number ‘8’ symbol */
+		sym_number_9_green = 8340, /* green number ‘9’ symbol */
+		sym_number_0_blue = 8341, /* blue number ‘0’ symbol */
+		sym_number_1_blue = 8342, /* blue number ‘1’ symbol */
+		sym_number_2_blue = 8343, /* blue number ‘2’ symbol */
+		sym_number_3_blue = 8344, /* blue number ‘3’ symbol */
+		sym_number_4_blue = 8345, /* blue number ‘4’ symbol */
+		sym_number_5_blue = 8346, /* blue number ‘5’ symbol */
+		sym_number_6_blue = 8347, /* blue number ‘6’ symbol */
+		sym_number_7_blue = 8348, /* blue number ‘7’ symbol */
+		sym_number_8_blue = 8349, /* blue number ‘8’ symbol */
+		sym_number_9_blue = 8350, /* blue number ‘9’ symbol */
+		sym_triangle_blue = 8351, /* blue triangle symbol */
+		sym_triangle_green = 8352, /* green triangle symbol */
+		sym_triangle_red = 8353, /* red triangle symbol */
+		/*---------------------------------------------------------------
+		Symbols for aviation (group 2...16383-24575...bits 15-13=010).
+		---------------------------------------------------------------*/
+		sym_airport = 16384, /* airport symbol */
+		sym_int = 16385, /* intersection symbol */
+		sym_ndb = 16386, /* non-directional beacon symbol */
+		sym_vor = 16387, /* VHF omni-range symbol */
+		sym_heliport = 16388, /* heliport symbol */
+		sym_private = 16389, /* private field symbol */
+		sym_soft_fld = 16390, /* soft field symbol */
+		sym_tall_tower = 16391, /* tall tower symbol */
+		sym_short_tower = 16392, /* short tower symbol */
+		sym_glider = 16393, /* glider symbol */
+		sym_ultralight = 16394, /* ultralight symbol */
+		sym_parachute = 16395, /* parachute symbol */
+		sym_vortac = 16396, /* VOR/TACAN symbol */
+		sym_vordme = 16397, /* VOR-DME symbol */
+		sym_faf = 16398, /* first approach fix */
+		sym_lom = 16399, /* localizer outer marker */
+		sym_map = 16400, /* missed approach point */
+		sym_tacan = 16401, /* TACAN symbol */
+		sym_seaplane = 16402, /* Seaplane Base */
+	} Symbol_Type;
+	////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(0F9A5D4A-64DA-4CB6-9909-25C42DC10041),
+		dual,
+		helpstring("ICommunication Interface"),
+		pointer_default(unique)
+	]
+	interface ICommunication : IDispatch
+	{
+		[id(1), helpstring("method open com port")] HRESULT OpenPort([in] BSTR bstrPort);
+		[id(2), helpstring("method close com port")] HRESULT ClosePort();
+		[id(3), helpstring("method reciver data from com port, return IDispatch of BodyPacket ")] HRESULT ReadBodyPacket([out, retval] IDispatch **ppdisp);
+		[id(4), helpstring("method send data to COM port, IDispatch of BodyPacket")] HRESULT WriteBodyPacket([in] IDispatch *pdisp);
+		[id(5), helpstring("method Send packet with ACK/NAK Handshaking")] HRESULT Send([in]IDispatch* pdisp);
+		[id(6), helpstring("method Reciver packet with ACK/NAK Handshaking")] HRESULT Reciver([out, retval] IDispatch** ppdisp);
+		[id(7), helpstring("method Flush")] HRESULT Clear();
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	//				
+	//					The base interface of IBodyPacket for IDXXX_Type
+	//
+	//	1. class CDXXX_Type :: public CBodyPacketImpl
+	//	2. COM_INTERFACE_ENTRY(IBodyPacket)
+	//  3. COM_INTERFACE_ENTRY2(IDispatch, IDXXX_Type)
+	//	4. interface IBodyPacket; 
+	//
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(730AF596-177B-4027-9EBB-FC915E917BA2),
+		dual,
+		helpstring("IBodyPacket Interface"),
+		pointer_default(unique)
+	]
+	interface IBodyPacket : IDispatch
+	{		
+		[propget, id(1000), helpstring("property PacketID")] HRESULT PacketID([out, retval] VARIANT *pVal);
+		[propput, id(1000), helpstring("property PacketID")] HRESULT PacketID([in] VARIANT newVal);
+		[propget, id(1001), helpstring("property Count - zise of data bytes")] HRESULT Count([out, retval] VARIANT *pVal);
+		[propget, id(1002), helpstring("property Status [TRUE-ok; FALSE-damage example bad CRC sum...]")] HRESULT Status([out, retval] VARIANT *pVal);
+		[id(1003), helpstring("method Add data-byte")] HRESULT Add([in] VARIANT Val);
+		[id(1004), helpstring("method Item get data-byte by index")] HRESULT Item([in] VARIANT varIndx,[out, retval] VARIANT *pVal);
+		[id(1005), helpstring("method Clear")] HRESULT Clear();
+		[propget, id(1006), helpstring("property ACK")] HRESULT ACK([out, retval] VARIANT *pVal);
+		[propget, id(1007), helpstring("property NAK")] HRESULT NAK([out, retval] VARIANT *pVal);
+		[id(1008), helpstring("method SetACKPacket")] HRESULT SetACKPacket([in] VARIANT varPacketID);
+		[id(1009), helpstring("method SetNAKPacket")] HRESULT SetNAKPacket([in] VARIANT varPacketID);
+	};
+	[
+		object,
+		uuid(294A611D-EA91-4754-B929-41A737BF1B6C),
+		dual,
+		helpstring("IHelperBodyPacket Interface"),
+		pointer_default(unique)
+	]
+	interface IHelperBodyPacket : IUnknown
+	{
+		HRESULT SetAccess(BODYPACKET_ACCESS mode);
+		HRESULT SetStatus(BOOL bStat);
+		HRESULT GetCRC(VARIANT *pVal);
+
+		midl_pragma warning(disable:2039)
+		HRESULT _Import([in] long xsize, [in, size_is(xsize)] byte arr[]);
+		HRESULT _Export([out] long* xsize, [out, size_is(,*xsize)] byte** arr);
+		midl_pragma warning(enable:2039)
+
+		HRESULT _Exchange();
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(16E7C83B-CFDA-49AD-AA14-CEBDDAC4F845),
+		dual,
+		helpstring("IApplication Interface"),
+		pointer_default(unique)
+	]
+	interface IApplication : IDispatch
+	{
+		[propputref, id(1), helpstring("property Communication")] HRESULT Communication([in] IDispatch* newVal);
+		[propget, id(2), helpstring("property ProductData")] HRESULT ProductData([out, retval] IDispatch* *pVal);
+		[propget, id(3), helpstring("property ProtocolArray")] HRESULT ProtocolArray([out, retval] IDispatch* *pVal);
+		/* Directive - command */
+		[id(4), helpstring("method Cmnd_Abort_Transfer")] HRESULT Cmnd_Abort_Transfer();
+		[id(5), helpstring("method Cmnd_Turn_Off_Pwr")] HRESULT Cmnd_Turn_Off_Pwr();
+		[id(6), helpstring("method Cmnd_Start_Pvt_Data")] HRESULT Cmnd_Start_Pvt_Data();
+		[id(7), helpstring("method Cmnd_Stop_Pvt_Data")] HRESULT Cmnd_Stop_Pvt_Data();
+		/* Get - command */
+		[id(8), helpstring("method Cmnd_Get_Transfer_Alm")] HRESULT Cmnd_Get_Transfer_Alm([out, retval] IDispatch** ppdisp);
+		[id(9), helpstring("method Cmnd_Get_Transfer_Posn")] HRESULT Cmnd_Get_Transfer_Posn([out, retval] IDispatch** ppdisp);
+		[id(10), helpstring("method Cmnd_Get_Transfer_Prx")] HRESULT Cmnd_Get_Transfer_Prx([out, retval] IDispatch** ppdisp);
+		[id(11), helpstring("method Cmnd_Get_Transfer_Rte")] HRESULT Cmnd_Get_Transfer_Rte([out, retval] IDispatch** ppdisp);
+		[id(12), helpstring("method Cmnd_Get_Transfer_Time")] HRESULT Cmnd_Get_Transfer_Time([out, retval] IDispatch** ppdisp);
+		[id(13), helpstring("method Cmnd_Get_Transfer_Trk")] HRESULT Cmnd_Get_Transfer_Trk([out, retval] IDispatch** ppdisp);
+		[id(14), helpstring("method Cmnd_Get_Transfer_Wpt")] HRESULT Cmnd_Get_Transfer_Wpt([out, retval] IDispatch** ppdisp);
+		[id(15), helpstring("method Cmnd_Get_FlightBook_Transfer")] HRESULT Cmnd_Get_FlightBook_Transfer([out, retval] IDispatch** ppdisp);
+		[id(16), helpstring("method Cmnd_Get_Transfer_Laps")] HRESULT Cmnd_Get_Transfer_Laps([out, retval] IDispatch** ppdisp);		
+		/* Set - command */
+		[id(17), helpstring("method Cmnd_Set_Transfer_Alm")] HRESULT Cmnd_Set_Transfer_Alm([in] IDispatch* pdisp);
+		[id(18), helpstring("method Cmnd_Set_Transfer_Posn")] HRESULT Cmnd_Set_Transfer_Posn([in] IDispatch* pdisp);
+		[id(19), helpstring("method Cmnd_Set_Transfer_Prx")] HRESULT Cmnd_Set_Transfer_Prx([in] IDispatch* pdisp);
+		[id(20), helpstring("method Cmnd_Set_Transfer_Rte")] HRESULT Cmnd_Set_Transfer_Rte([in] IDispatch* pdisp);
+		[id(21), helpstring("method Cmnd_Set_Transfer_Time")] HRESULT Cmnd_Set_Transfer_Time([in] IDispatch* pdisp);
+		[id(22), helpstring("method Cmnd_Set_Transfer_Trk")] HRESULT Cmnd_Set_Transfer_Trk([in] IDispatch* pdisp);
+		[id(23), helpstring("method Cmnd_Set_Transfer_Wpt")] HRESULT Cmnd_Set_Transfer_Wpt([in] IDispatch* pdisp);
+		[id(24), helpstring("method Cmnd_Set_FlightBook_Transfer")] HRESULT Cmnd_Set_FlightBook_Transfer([in] IDispatch* pdisp);
+		[id(25), helpstring("method Cmnd_Set_Transfer_Laps")] HRESULT Cmnd_Set_Transfer_Laps([in] IDispatch* pdisp);
+		[id(26), helpstring("method CreateBodyPacket")] HRESULT CreateBodyPacket([in] BSTR pid_name, [out,retval] IDispatch** ppdisp);
+		[propget, id(27), helpstring("property Native")] HRESULT Native([out, retval] BOOL *pVal);
+		[propput, id(27), helpstring("property Native")] HRESULT Native([in] BOOL newVal);
+
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(18228139-1608-40F8-A9B4-E36782CA4ACE),
+		dual,
+		helpstring("IProtocolArray Interface"),
+		pointer_default(unique)
+	]
+	interface IProtocolArray : IDispatch
+	{
+		[id(1), helpstring("method Item")] HRESULT Item([in] long indx, [out, retval] VARIANT *pVal);
+		[propget, id(2), helpstring("property Count")] HRESULT Count([out, retval] long *pVal);
+		[propget, id(3), helpstring("property WaypointTransferProtocol")] HRESULT Waypoint_Transfer_Protocol([out, retval] BSTR *pVal);
+		[propget, id(4), helpstring("property RouteTransferProtocol")] HRESULT Route_Transfer_Protocol([out, retval] BSTR *pVal);
+		[propget, id(5), helpstring("property TrackLogTransferProtocol")] HRESULT Track_Log_Transfer_Protocol([out, retval] BSTR *pVal);
+		[propget, id(6), helpstring("property ProximityWaypointTransferProtocol")] HRESULT Proximity_Waypoint_Transfer_Protocol([out, retval] BSTR *pVal);
+		[propget, id(7), helpstring("property AlmanacTransferProtocol")] HRESULT Almanac_Transfer_Protocol([out, retval] BSTR *pVal);
+		[propget, id(8), helpstring("property Date_and_Time_Initialization_Protocol")] HRESULT Date_and_Time_Initialization_Protocol([out, retval] BSTR *pVal);
+		[propget, id(9), helpstring("property FlightBook_Transfer_Protocol")] HRESULT FlightBook_Transfer_Protocol([out, retval] BSTR *pVal);
+		[propget, id(10), helpstring("property Position_Initialization_Protocol")] HRESULT Position_Initialization_Protocol([out, retval] BSTR *pVal);
+		[propget, id(11), helpstring("property PVT_Data_Protocol")] HRESULT PVT_Data_Protocol([out, retval] BSTR *pVal);
+		[propget, id(12), helpstring("property Lap_Transfer_Protocol")] HRESULT Lap_Transfer_Protocol([out, retval] BSTR *pVal);
+		[propget, id(13), helpstring("property Link_Protocol")] HRESULT Link_Protocol([out, retval] BSTR *pVal);
+		[propget, id(14), helpstring("property Device_Command_Protocol")] HRESULT Device_Command_Protocol([out, retval] BSTR *pVal);
+		[propget, id(15), helpstring("property Physical_Protocol")] HRESULT Physical_Protocol([out, retval] BSTR *pVal);
+		[propget, id(16), helpstring("property Waypoint_Data_Type")] HRESULT Waypoint_Data_Type([out, retval] BSTR *pVal);
+		[propget, id(17), helpstring("property Route_Header_Data_Type")] HRESULT Route_Header_Data_Type([out, retval] BSTR *pVal);
+		[propget, id(18), helpstring("property Route_Waypoint_Data_Type")] HRESULT Route_Waypoint_Data_Type([out, retval] BSTR *pVal);
+		[propget, id(19), helpstring("property Route_Link_Data_Type")] HRESULT Route_Link_Data_Type([out, retval] BSTR *pVal);
+		[propget, id(20), helpstring("property Almanac_Data_Type")] HRESULT Almanac_Data_Type([out, retval] BSTR *pVal);
+		[propget, id(21), helpstring("property Track_Header_Data_Type")] HRESULT Track_Header_Data_Type([out, retval] BSTR *pVal);
+		[propget, id(22), helpstring("property Track_Data_Type")] HRESULT Track_Data_Type([out, retval] BSTR *pVal);
+		[propget, id(23), helpstring("property PVT_Data_Type")] HRESULT PVT_Data_Type([out, retval] BSTR *pVal);
+		[propget, id(24), helpstring("property FlightBook_Data_Type")] HRESULT FlightBook_Data_Type([out, retval] BSTR *pVal);
+		[propget, id(25), helpstring("property Lap_Data_Type")] HRESULT Lap_Data_Type([out, retval] BSTR *pVal);
+		[propget, id(26), helpstring("property Position_Data_Type")] HRESULT Position_Data_Type([out, retval] BSTR *pVal);
+		[propget, id(27), helpstring("property Date_Time_Data_Type")] HRESULT Date_Time_Data_Type([out, retval] BSTR *pVal);
+		[propget, id(28), helpstring("property Proximity_Waypoint_Data_Type")] HRESULT Proximity_Waypoint_Data_Type([out, retval] BSTR *pVal);
+		//[id(16), helpstring("method Get_Transfer_Data_Type")] HRESULT Get_Transfer_Data_Type([in] VARIANT pid, [out, retval] BSTR *pVal);
+	};
+	[
+		object,
+		uuid(AE0EAE18-04FF-4ddc-9F79-C2F1D8DDC865),
+		dual,
+		helpstring("IHelperProtocolArray Interface"),
+		pointer_default(unique)
+	]
+	interface IHelperProtocolArray : IUnknown
+	{
+		HRESULT Add(BSTR Val);
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(751F1E73-4CFA-4F84-A8B1-F08F10DEDBCF),
+		dual,
+		helpstring("IProductData Interface"),
+		pointer_default(unique)
+	]
+	interface IProductData : IDispatch
+	{
+		[propget, id(1), helpstring("property product_ID")] HRESULT product_ID([out, retval] int *pVal);	
+		[propget, id(2), helpstring("property software_version")] HRESULT software_version([out, retval] int *pVal);
+		[propget, id(3), helpstring("property product_description")] HRESULT product_description([out, retval] VARIANT *pVal);
+	};
+	[
+		object,
+		uuid(B49BCD69-C0AA-4ca3-BC63-091E29A7D23E),
+		dual,
+		helpstring("IHelperProductData Interface"),
+		pointer_default(unique)
+	]
+	interface IHelperProductData : IUnknown
+	{
+		HRESULT SetProductDescription(BSTR desc);
+		HRESULT SetSoftwareVersion(int val);
+		HRESULT SetProductID(int val);
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(F7F3D000-CBB7-41C0-8D89-60517B335475),
+		dual,
+		helpstring("IBodyPackets Interface"),
+		pointer_default(unique)
+	]
+	interface IBodyPackets : IDispatch
+	{
+		[id(DISPID_VALUE), helpstring("method Item")] HRESULT Item([in] long index, [out, retval] IDispatch** ppdisp);
+		[propget, id(2), helpstring("property Count")] HRESULT Count([out, retval] long *pVal);
+		[id(3), helpstring("method Add")] HRESULT Add([in] IDispatch* pnewBodyPacket);
+		[id(4), helpstring("method Remove")] HRESULT Remove([in] long Index);
+		[propget, id(DISPID_NEWENUM), helpstring("property _NewEnum")] HRESULT _NewEnum([out, retval] LPUNKNOWN *pVal);
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(EBDD5B58-3169-4D98-84F7-88D1DE9BBF85),
+		dual,
+		helpstring("IPrimitive Interface"),
+		pointer_default(unique)
+	]
+	interface IPrimitive : IDispatch
+	{
+		[id(1), helpstring("method Add")] HRESULT Add([in] VARIANT Val);
+		[id(2), helpstring("method Clear")] HRESULT Clear();
+		[propget, id(3), helpstring("property Count")] HRESULT Count([out, retval] VARIANT *pVal);
+		[propget, id(4), helpstring("property gfloat")] HRESULT gfloat([out, retval] float *pVal);
+		[propput, id(4), helpstring("property gfloat")] HRESULT gfloat([in] float newVal);
+		[propget, id(5), helpstring("property gdouble")] HRESULT gdouble([out, retval] double *pVal);
+		[propput, id(5), helpstring("property gdouble")] HRESULT gdouble([in] double newVal);
+		[propget, id(6), helpstring("property glong")] HRESULT glong([out, retval] long *pVal);
+		[propput, id(6), helpstring("property glong")] HRESULT glong([in] long newVal);
+		[propget, id(7), helpstring("property gint")] HRESULT gint([out, retval] short *pVal);
+		[propput, id(7), helpstring("property gint")] HRESULT gint([in] short newVal);
+		[propget, id(8), helpstring("property gword")] HRESULT gword([out, retval] unsigned short *pVal);
+		[propput, id(8), helpstring("property gword")] HRESULT gword([in] unsigned short newVal);
+		[propget, id(9), helpstring("property glongword")] HRESULT glongword([out, retval] unsigned long *pVal);
+		[propput, id(9), helpstring("property glongword")] HRESULT glongword([in] unsigned long newVal);
+		[id(10), helpstring("method Item")] HRESULT Item([in] long Indx,[out, retval] VARIANT *pVal);
+		[propget, id(11), helpstring("property gsemicircles")] HRESULT gsemicircles([out, retval] long *pVal);
+		[propput, id(11), helpstring("property gsemicircles")] HRESULT gsemicircles([in] long newVal);
+		[propget, id(12), helpstring("property gradians")] HRESULT gradians([out, retval] double *pVal);
+		[propput, id(12), helpstring("property gradians")] HRESULT gradians([in] double newVal);
+		[propget, id(13), helpstring("property gdegrees")] HRESULT gdegrees_from_semicircles([out, retval] double *pVal);
+		[propget, id(14), helpstring("property gdegrees")] HRESULT gdegrees_from_radians([out, retval] double *pVal);
+		[propput, id(15), helpstring("property gdegrees")] HRESULT gdegrees([in] double newVal);
+	};
+
+	////////////////////////////////////////////////////////////////////////////////////////
+	// Garmin Data Types DXXX_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	// Base Garmin Data Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(B892E0AF-1D97-4d8f-8362-974E81101551),
+		dual,
+		helpstring("IGarminDataType Interface"),
+		pointer_default(unique)
+	]
+	interface IGarminDataType : IDispatch
+	{
+		[propget, id(2000), helpstring("property Type")] HRESULT Type([out, retval] BSTR *pVal);
+		[propget, id(2001), helpstring("property IDXXX_Type")] HRESULT IDXXX_Type([out, retval] IDispatch* *pVal);
+	}
+	////////////////////////////////////////////////////////////////////////////////////////
+	// IDXXX_Wpt_Type - common interface for Waypoint
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(159762E6-8B54-43b8-ACB7-4FE4AE5BDFFB),
+		dual,
+		helpstring("IDXXX_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface IDXXX_Wpt_Type : IGarminDataType
+	{
+		[propget, id(101), helpstring("property ident")] HRESULT ident([out, retval] BSTR *pVal);
+		[propput, id(101), helpstring("property ident")] HRESULT ident([in] BSTR newVal);
+		[propget, id(102), helpstring("property lon")] HRESULT lon([out, retval] long *pVal);
+		[propput, id(102), helpstring("property lon")] HRESULT lon([in] long newVal);
+		[propget, id(103), helpstring("property lat")] HRESULT lat([out, retval] long *pVal);
+		[propput, id(103), helpstring("property lat")] HRESULT lat([in] long newVal);
+	};
+	// ID100_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(E95D7CBD-4282-455C-9675-E78429924F2A),
+		dual,
+		helpstring("ID100_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID100_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID101_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(E88FA770-0531-4501-B776-5E2D2CBE6557),
+		dual,
+		helpstring("ID101_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID101_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID102_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(F3FB6D62-0399-4071-AE64-C25734B93551),
+		dual,
+		helpstring("ID102_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID102_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID103_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(2DFA1A39-1124-4DF1-A263-AF3562762C18),
+		dual,
+		helpstring("ID103_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID103_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID104_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(327D435A-EDD6-4AF5-A30A-7E9A0D902147),
+		dual,
+		helpstring("ID104_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID104_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID105_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(85D51003-9918-4DEC-9771-1A943D98C416),
+		dual,
+		helpstring("ID105_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID105_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID106_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(8BE8FA0B-9C2B-43C9-98BF-5D6133FB4EEF),
+		dual,
+		helpstring("ID106_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID106_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID107_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(E17059F8-4F93-4882-9146-ECA091E170C3),
+		dual,
+		helpstring("ID107_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID107_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID108_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(7BE71D06-70AC-406F-863D-B3AC86DFCC81),
+		dual,
+		helpstring("ID108_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID108_Wpt_Type : IDXXX_Wpt_Type
+	{
+		[propget, id(1), helpstring("property color")] HRESULT color([out, retval] unsigned int *pVal);
+		[propput, id(1), helpstring("property color")] HRESULT color([in] unsigned int newVal);
+		[propget, id(2), helpstring("property wpt_class")] HRESULT wpt_class([out, retval] unsigned int *pVal);
+		[propput, id(2), helpstring("property wpt_class")] HRESULT wpt_class([in] unsigned int newVal);
+		[propget, id(3), helpstring("property dspl")] HRESULT dspl([out, retval] unsigned int *pVal);
+		[propput, id(3), helpstring("property dspl")] HRESULT dspl([in] unsigned int newVal);
+		[propget, id(4), helpstring("property attr")] HRESULT attr([out, retval] unsigned int *pVal);
+		[propput, id(4), helpstring("property attr")] HRESULT attr([in] unsigned int newVal);
+		[propget, id(5), helpstring("property smbl")] HRESULT smbl([out, retval] int *pVal);
+		[propput, id(5), helpstring("property smbl")] HRESULT smbl([in] int newVal);
+		[propget, id(6), helpstring("property alt")] HRESULT alt([out, retval] float *pVal);
+		[propput, id(6), helpstring("property alt")] HRESULT alt([in] float newVal);
+		[propget, id(7), helpstring("property dpth")] HRESULT dpth([out, retval] float *pVal);
+		[propput, id(7), helpstring("property dpth")] HRESULT dpth([in] float newVal);
+		[propget, id(8), helpstring("property dist")] HRESULT dist([out, retval] float *pVal);
+		[propput, id(8), helpstring("property dist")] HRESULT dist([in] float newVal);
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID109_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(49EFB30A-7AEB-4AA1-BC0D-2C9E64C0BDD0),
+		dual,
+		helpstring("ID109_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID109_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID110_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(E6DBBF81-C03A-4E33-A1A4-3C41CD7E9994),
+		dual,
+		helpstring("ID110_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID110_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID150_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(FA811D94-B38A-4ACE-968D-7457111A45FE),
+		dual,
+		helpstring("ID150_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID150_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID151_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(CB1F20DE-9D03-4436-87F6-80D049962C55),
+		dual,
+		helpstring("ID151_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID151_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID152_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(99270E0B-BF3F-4699-AAD7-F5E55B8C750C),
+		dual,
+		helpstring("ID152_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID152_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID154_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(92EF6B0C-7B5B-4080-82BA-1DB3DEADBBCB),
+		dual,
+		helpstring("ID154_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID154_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID155_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(9B9C68CF-B1B8-461F-9F4A-E3B980210CE4),
+		dual,
+		helpstring("ID155_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID155_Wpt_Type : IDXXX_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID200_Rte_Hdr_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(B09277E6-B1B6-4786-BC21-CCE9D0821CBD),
+		dual,
+		helpstring("ID200_Rte_Hdr_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID200_Rte_Hdr_Type : IGarminDataType
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID201_Rte_Hdr_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(98C9CD1F-B32B-405C-95EE-AC0788861571),
+		dual,
+		helpstring("ID201_Rte_Hdr_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID201_Rte_Hdr_Type : IGarminDataType
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID202_Rte_Hdr_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(B26D0E64-9C6B-4815-ACF8-8EA918B93098),
+		dual,
+		helpstring("ID202_Rte_Hdr_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID202_Rte_Hdr_Type : IGarminDataType
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID210_Rte_Link_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(DAAA1645-843A-4B48-B052-2954C70C37A8),
+		dual,
+		helpstring("ID210_Rte_Link_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID210_Rte_Link_Type : IGarminDataType
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// IDXXX_Trk_Point_Type - common interface for Trk_Point_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(B6E9B4D0-4823-426b-9C03-FAF0BB148151),
+		dual,
+		helpstring("IDXXX_Trk_Point_Type Interface"),
+		pointer_default(unique)
+	]
+	interface IDXXX_Trk_Point_Type : IGarminDataType
+	{
+		[propget, id(101), helpstring("property lat")] HRESULT lat([out, retval] long *pVal);
+		[propput, id(101), helpstring("property lat")] HRESULT lat([in] long newVal);
+		[propget, id(102), helpstring("property lon")] HRESULT lon([out, retval] long *pVal);
+		[propput, id(102), helpstring("property lon")] HRESULT lon([in] long newVal);
+		[propget, id(103), helpstring("property time")] HRESULT time([out, retval] unsigned long *pVal);
+		[propput, id(103), helpstring("property time")] HRESULT time([in] unsigned long newVal);
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID300_Trk_Point_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(41A7411C-0F75-4D12-9B30-2349CDA847D6),
+		dual,
+		helpstring("ID300_Trk_Point_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID300_Trk_Point_Type : IDXXX_Trk_Point_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID301_Trk_Point_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(CC178575-0663-49C0-BDEF-B64C5D7B93B5),
+		dual,
+		helpstring("ID301_Trk_Point_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID301_Trk_Point_Type : IDXXX_Trk_Point_Type
+	{
+
+		[propget, id(1), helpstring("property alt")] HRESULT alt([out, retval] float *pVal);
+		[propput, id(1), helpstring("property alt")] HRESULT alt([in] float newVal);
+		[propget, id(2), helpstring("property dpth")] HRESULT dpth([out, retval] float *pVal);
+		[propput, id(2), helpstring("property dpth")] HRESULT dpth([in] float newVal);
+		[propget, id(3), helpstring("property new_trk")] HRESULT new_trk([out, retval] BOOL *pVal);
+		[propput, id(3), helpstring("property new_trk")] HRESULT new_trk([in] BOOL newVal);
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID302_Trk_Point_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(08D674C1-E27D-471A-912D-34B699800D3D),
+		dual,
+		helpstring("ID302_Trk_Point_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID302_Trk_Point_Type : IDXXX_Trk_Point_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID310_Trk_Hdr_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(23423C4D-EB94-447C-A6CF-1635C4063321),
+		dual,
+		helpstring("ID310_Trk_Hdr_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID310_Trk_Hdr_Type : IGarminDataType
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID311_Trk_Hdr_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(05ABD889-E3EB-41EC-A0DD-837E023F30F6),
+		dual,
+		helpstring("ID311_Trk_Hdr_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID311_Trk_Hdr_Type : IGarminDataType
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID312_Trk_Hdr_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(F1E2E227-ED1C-40F3-90DA-53337D17C9F4),
+		dual,
+		helpstring("ID312_Trk_Hdr_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID312_Trk_Hdr_Type : IGarminDataType
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// IDXXX_Prx_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(436FF720-6760-4036-ADFF-1B4CA206F6A8),
+		dual,
+		helpstring("IDXXX_Prx_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface IDXXX_Prx_Wpt_Type : IGarminDataType
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID400_Prx_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(C6F61EAE-6D5A-4615-8393-533AC03E3828),
+		dual,
+		helpstring("ID400_Prx_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID400_Prx_Wpt_Type : IDXXX_Prx_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID403_Prx_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(C068C7CC-38A4-4ADF-87FC-EBC8C098836C),
+		dual,
+		helpstring("ID403_Prx_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID403_Prx_Wpt_Type : IDXXX_Prx_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID450_Prx_Wpt_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(23A98EA2-3BF2-4140-804B-8E8CFC572810),
+		dual,
+		helpstring("ID450_Prx_Wpt_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID450_Prx_Wpt_Type : IDXXX_Prx_Wpt_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// IDXXX_Almanac_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(EA73540C-C0F6-4e60-B083-E1DA508D8138),
+		dual,
+		helpstring("IDXXX_Almanac_Type Interface"),
+		pointer_default(unique)
+	]
+	interface IDXXX_Almanac_Type : IGarminDataType
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID500_Almanac_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(317AC2D3-C90B-4229-AC52-AEB80D4618BA),
+		dual,
+		helpstring("ID500_Almanac_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID500_Almanac_Type : IDXXX_Almanac_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID501_Almanac_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(8238A7AD-E78C-47F2-9E28-F2E7488CDBC1),
+		dual,
+		helpstring("ID501_Almanac_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID501_Almanac_Type : IDXXX_Almanac_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID550_Almanac_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(49C2B829-07C0-4610-A4B6-1DDD708AD4C3),
+		dual,
+		helpstring("ID550_Almanac_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID550_Almanac_Type : IDXXX_Almanac_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID551_Almanac_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(FA135063-1E92-40E2-98DE-13CCB19AFED8),
+		dual,
+		helpstring("ID551_Almanac_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID551_Almanac_Type : IDXXX_Almanac_Type
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID600_Date_Time_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(85540371-1DB0-45D6-8916-592EAFAB1CA7),
+		dual,
+		helpstring("ID600_Date_Time_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID600_Date_Time_Type : IGarminDataType
+	{
+		[propget, id(1), helpstring("property month")] HRESULT month([out, retval] unsigned int *pVal);
+		[propput, id(1), helpstring("property month")] HRESULT month([in] unsigned int newVal);
+		[propget, id(2), helpstring("property day")] HRESULT day([out, retval] unsigned int *pVal);
+		[propput, id(2), helpstring("property day")] HRESULT day([in] unsigned int newVal);
+		[propget, id(3), helpstring("property year")] HRESULT year([out, retval] unsigned int *pVal);
+		[propput, id(3), helpstring("property year")] HRESULT year([in] unsigned int newVal);		
+		[propget, id(4), helpstring("property hour")] HRESULT hour([out, retval] unsigned int *pVal);
+		[propput, id(4), helpstring("property hour")] HRESULT hour([in] unsigned int newVal);
+		[propget, id(5), helpstring("property minute")] HRESULT minute([out, retval] unsigned int *pVal);
+		[propput, id(5), helpstring("property minute")] HRESULT minute([in] unsigned int newVal);
+		[propget, id(6), helpstring("property second")] HRESULT second([out, retval] unsigned int *pVal);
+		[propput, id(6), helpstring("property second")] HRESULT second([in] unsigned int newVal);
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID650_FlightBook_Record_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(4B5F1508-CBF5-43ED-A98A-AEEC7302666B),
+		dual,
+		helpstring("ID650_FlightBook_Record_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID650_FlightBook_Record_Type : IDispatch
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID700_Position_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(52143944-06EE-45AC-9BCF-1CFC0A38DF58),
+		dual,
+		helpstring("ID700_Position_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID700_Position_Type : IDispatch
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID800_Pvt_Data_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(1509FB5F-1400-4E74-BAC0-424358B98089),
+		dual,
+		helpstring("ID800_Pvt_Data_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID800_Pvt_Data_Type : IDispatch
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	// ID906_Lap_Type
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		object,
+		uuid(FDAC05DF-DC76-400F-8677-6EA003BFD077),
+		dual,
+		helpstring("ID906_Lap_Type Interface"),
+		pointer_default(unique)
+	]
+	interface ID906_Lap_Type : IDispatch
+	{
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+[
+	uuid(D045DCC4-CCC5-434B-97E6-76A2D9FE01EA),
+	version(1.0),
+	helpstring("garmin 1.0 Type Library")
+]
+library GARMINLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(F7ABA92D-DA5A-4522-A60F-0F29C103E299),
+		helpstring("Communication Class")
+	]
+	coclass Communication
+	{
+		[default] interface ICommunication;
+	};
+	[
+		uuid(E2C4B620-60DE-40F5-9E8D-CAB31B6456F6),
+		helpstring("BodyPacket Class")
+	]
+	coclass BodyPacket
+	{
+		[default] interface IBodyPacket;
+	};
+	[
+		uuid(E881EB23-1EE8-4CA2-8FB6-E44BA19E8BF4),
+		helpstring("Application Class")
+	]
+	coclass Application
+	{
+		[default] interface IApplication;
+	};
+	[
+		uuid(CCF8E6BB-01E6-4CBD-892F-F0021C98BC6D),
+		helpstring("ProtocolArray Class")
+	]
+	coclass ProtocolArray
+	{
+		[default] interface IProtocolArray;
+	};
+	[
+		uuid(27FB9C7C-881D-4342-8C95-B64789C12968),
+		helpstring("ProductData Class")
+	]
+	coclass ProductData
+	{
+		[default] interface IProductData;
+	};
+	[
+		uuid(B3528481-0DD5-47AA-969A-0068152CBC9D),
+		helpstring("BodyPackets Class")
+	]
+	coclass BodyPackets
+	{
+		[default] interface IBodyPackets;
+	};
+	[
+		uuid(23507B85-EA6D-4CEC-B600-759CEE3E5E04),
+		helpstring("Primitive Class")
+	]
+	coclass Primitive
+	{
+		[default] interface IPrimitive;
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////// Wpt_Type ///////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(4C91C837-D229-4B4A-9709-D6C0F69BC39E),
+		helpstring("D100_Wpt_Type Class")
+	]
+	coclass D100_Wpt_Type
+	{
+		[default] interface ID100_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(43F46BEF-7111-4DE7-AF7D-5E99F69B7040),
+		helpstring("D101_Wpt_Type Class")
+	]
+	coclass D101_Wpt_Type
+	{
+		[default] interface ID101_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(1651EF90-A254-4BD7-BCD6-19710D336840),
+		helpstring("D102_Wpt_Type Class")
+	]
+	coclass D102_Wpt_Type
+	{
+		[default] interface ID102_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(957512F9-9B2F-4FCE-BF24-1A84A50C5E5B),
+		helpstring("D103_Wpt_Type Class")
+	]
+	coclass D103_Wpt_Type
+	{
+		[default] interface ID103_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(DEE6298F-D2DB-425E-A394-F22DD325FE3A),
+		helpstring("D104_Wpt_Type Class")
+	]
+	coclass D104_Wpt_Type
+	{
+		[default] interface ID104_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(AD9B9FC8-A327-4C8E-A7E1-DC6A7E336FD8),
+		helpstring("D105_Wpt_Type Class")
+	]
+	coclass D105_Wpt_Type
+	{
+		[default] interface ID105_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(008404F2-FAB2-4DF0-A7C4-90418D9C3DB2),
+		helpstring("D106_Wpt_Type Class")
+	]
+	coclass D106_Wpt_Type
+	{
+		[default] interface ID106_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(4D008E69-1242-44D5-95F7-7DC960A3D036),
+		helpstring("D107_Wpt_Type Class")
+	]
+	coclass D107_Wpt_Type
+	{
+		[default] interface ID107_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(DE648C25-FDA6-4E41-89E0-C8A2186C9B2D),
+		helpstring("D108_Wpt_Type Class")
+	]
+	coclass D108_Wpt_Type
+	{
+		[default] interface ID108_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(43FDF269-1E47-4051-B0B0-D6656605CA01),
+		helpstring("D109_Wpt_Type Class")
+	]
+	coclass D109_Wpt_Type
+	{
+		[default] interface ID109_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(32B41613-EFBF-4386-890F-291126A2E978),
+		helpstring("D110_Wpt_Type Class")
+	]
+	coclass D110_Wpt_Type
+	{
+		[default] interface ID110_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(732E9B0F-5C43-4C31-8CD6-8A11600FFAA0),
+		helpstring("D150_Wpt_Type Class")
+	]
+	coclass D150_Wpt_Type
+	{
+		[default] interface ID150_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(DA18A25F-ED7F-4911-BFBB-285A7831190F),
+		helpstring("D151_Wpt_Type Class")
+	]
+	coclass D151_Wpt_Type
+	{
+		[default] interface ID151_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(9A125B74-713F-40FC-9595-E5E3F51E7277),
+		helpstring("D152_Wpt_Type Class")
+	]
+	coclass D152_Wpt_Type
+	{
+		[default] interface ID152_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(CF96ADDF-BC58-4CA5-A54B-4397DEB3D13F),
+		helpstring("D154_Wpt_Type Class")
+	]
+	coclass D154_Wpt_Type
+	{
+		[default] interface ID154_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	[
+		uuid(40777174-DDA7-49A9-B8A2-875625C2C3E0),
+		helpstring("D155_Wpt_Type Class")
+	]
+	coclass D155_Wpt_Type
+	{
+		[default] interface ID155_Wpt_Type;
+		interface IDXXX_Wpt_Type;
+		interface IGarminDataType;		
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////// Rte_Type ///////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(D3EA58A3-4AC8-4078-97FC-B1B4455EF917),
+		helpstring("D200_Rte_Hdr_Type Class")
+	]
+	coclass D200_Rte_Hdr_Type
+	{
+		[default] interface ID200_Rte_Hdr_Type;
+		interface IGarminDataType;
+	};
+	[
+		uuid(1B8CB1A8-C435-4CE0-AA67-60941AD75610),
+		helpstring("D201_Rte_Hdr_Type Class")
+	]
+	coclass D201_Rte_Hdr_Type
+	{
+		[default] interface ID201_Rte_Hdr_Type;
+		interface IGarminDataType;
+	};
+	[
+		uuid(A31F833A-DDD1-497A-96B0-ACA997179440),
+		helpstring("D202_Rte_Hdr_Type Class")
+	]
+	coclass D202_Rte_Hdr_Type
+	{
+		[default] interface ID202_Rte_Hdr_Type;
+		interface IGarminDataType;
+	};
+	[
+		uuid(EFF2F681-0349-4FD3-811A-F6882C169620),
+		helpstring("D210_Rte_Link_Type Class")
+	]
+	coclass D210_Rte_Link_Type
+	{
+		[default] interface ID210_Rte_Link_Type;
+		interface IGarminDataType;
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////// Trk_Point_Type ///////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(28D9CC60-6F9A-4CC9-BC0C-290CA58C3E0B),
+		helpstring("D301_Trk_Point_Type Class")
+	]
+	coclass D301_Trk_Point_Type
+	{
+		[default] interface ID301_Trk_Point_Type;		
+		interface IDXXX_Trk_Point_Type;
+		interface IGarminDataType;
+	};
+	[
+		uuid(7B8D7DDE-7953-4EAF-BCB9-E35A88CFCC27),
+		helpstring("D300_Trk_Point_Type Class")
+	]
+	coclass D300_Trk_Point_Type
+	{
+		[default] interface ID300_Trk_Point_Type;
+		interface IDXXX_Trk_Point_Type;
+		interface IGarminDataType;
+	};
+	[
+		uuid(9366A030-F925-4B71-BBBE-D7F058EF1AC6),
+		helpstring("D302_Trk_Point_Type Class")
+	]
+	coclass D302_Trk_Point_Type
+	{
+		[default] interface ID302_Trk_Point_Type;
+		interface IDXXX_Trk_Point_Type;
+		interface IGarminDataType;
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////// Trk_Hdr_Type ///////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(BA20AC05-864A-450A-9556-F99F1DD7EEA7),
+		helpstring("D310_Trk_Hdr_Type Class")
+	]
+	coclass D310_Trk_Hdr_Type
+	{
+		[default] interface ID310_Trk_Hdr_Type;
+		interface IGarminDataType;
+	};
+	[
+		uuid(2C3FA6CA-EE25-439D-A754-0B621BB2C834),
+		helpstring("D311_Trk_Hdr_Type Class")
+	]
+	coclass D311_Trk_Hdr_Type
+	{
+		[default] interface ID311_Trk_Hdr_Type;
+		interface IGarminDataType;
+	};
+	[
+		uuid(E3C7BEA2-0B59-4B95-9BDD-01058D91E76E),
+		helpstring("D312_Trk_Hdr_Type Class")
+	]
+	coclass D312_Trk_Hdr_Type
+	{
+		[default] interface ID312_Trk_Hdr_Type;
+		interface IGarminDataType;
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////// Prx_Wpt_Type /////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(6D452F77-8412-41DC-B91D-DF250C6966B7),
+		helpstring("D400_Prx_Wpt_Type Class")
+	]
+	coclass D400_Prx_Wpt_Type
+	{
+		[default] interface ID400_Prx_Wpt_Type;
+		interface IDXXX_Prx_Wpt_Type;
+		interface IGarminDataType;
+	};
+	[
+		uuid(B549E0FF-8B83-4F4F-A235-67F497F556AA),
+		helpstring("D403_Prx_Wpt_Type Class")
+	]
+	coclass D403_Prx_Wpt_Type
+	{
+		[default] interface ID403_Prx_Wpt_Type;
+		interface IDXXX_Prx_Wpt_Type;
+		interface IGarminDataType;
+	};
+	[
+		uuid(564A6544-7671-4953-9D62-CB246C7D3B68),
+		helpstring("D450_Prx_Wpt_Type Class")
+	]
+	coclass D450_Prx_Wpt_Type
+	{
+		[default] interface ID450_Prx_Wpt_Type;
+		interface IDXXX_Prx_Wpt_Type;
+		interface IGarminDataType;
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////// Almanac_Type ///////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(D34CC62D-139F-4381-A9DE-B51A64738654),
+		helpstring("D500_Almanac_Type Class")
+	]
+	coclass D500_Almanac_Type
+	{
+		[default] interface ID500_Almanac_Type;
+	};
+	[
+		uuid(414668FF-9032-4CAF-99B8-48FE137D4F0C),
+		helpstring("D501_Almanac_Type Class")
+	]
+	coclass D501_Almanac_Type
+	{
+		[default] interface ID501_Almanac_Type;
+	};
+	[
+		uuid(9DE54AB2-E63F-4395-BF93-C3AC20E301AA),
+		helpstring("D550_Almanac_Type Class")
+	]
+	coclass D550_Almanac_Type
+	{
+		[default] interface ID550_Almanac_Type;
+	};
+	[
+		uuid(77CFC408-3357-4E31-A802-40B6169888C2),
+		helpstring("D551_Almanac_Type Class")
+	]
+	coclass D551_Almanac_Type
+	{
+		[default] interface ID551_Almanac_Type;
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////// Date_Time_Type ///////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(4A96C561-C3DC-4E9C-B2D9-985C6D9853AE),
+		helpstring("D600_Date_Time_Type Class")
+	]
+	coclass D600_Date_Time_Type
+	{
+		[default] interface ID600_Date_Time_Type;
+		interface IGarminDataType;
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////// FlightBook_Record_Type ///////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(8C8316B6-2F2C-462A-AA2E-7C2BC0220471),
+		helpstring("D650_FlightBook_Record_Type Class")
+	]
+	coclass D650_FlightBook_Record_Type
+	{
+		[default] interface ID650_FlightBook_Record_Type;
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////// Position_Type ////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(83DDA911-E86C-4EF5-803E-7775E8766953),
+		helpstring("D700_Position_Type Class")
+	]
+	coclass D700_Position_Type
+	{
+		[default] interface ID700_Position_Type;
+		interface IGarminDataType;
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////// Pvt_Data_Type ////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(7D280D8B-5906-486E-826F-CDCC3191C0FE),
+		helpstring("D800_Pvt_Data_Type Class")
+	]
+	coclass D800_Pvt_Data_Type
+	{
+		[default] interface ID800_Pvt_Data_Type;
+		interface IGarminDataType;
+	};
+	////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////// Lap_Type /////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	[
+		uuid(9CF110AD-34F8-4C88-B451-56BB486B201C),
+		helpstring("D906_Lap_Type Class")
+	]
+	coclass D906_Lap_Type
+	{
+		[default] interface ID906_Lap_Type;
+		interface IGarminDataType;
+	};
+};
