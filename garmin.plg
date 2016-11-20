@@ -1,0 +1,274 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: garmin - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "midl.exe /tlb ".\garmin.tlb" /h "garmin.h" /iid "garmin_i.c" /Oicf "D:\Program C++\Garmin\garmin\garmin.idl""
+Creating command line "rc.exe /l 0x419 /fo"Debug/garmin.res" /d "_DEBUG" "D:\Program C++\Garmin\garmin\garmin.rc"" 
+Creating temporary file "C:\DOCUME~1\admin\LOCALS~1\Temp\RSP340.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /FR"Debug/" /Fp"Debug/garmin.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Program C++\Garmin\garmin\Application.cpp"
+"D:\Program C++\Garmin\garmin\BodyPacket.cpp"
+"D:\Program C++\Garmin\garmin\BodyPacketImpl.cpp"
+"D:\Program C++\Garmin\garmin\BodyPackets.cpp"
+"D:\Program C++\Garmin\garmin\Communication.cpp"
+"D:\Program C++\Garmin\garmin\D100_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D101_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D102_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D103_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D104_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D105_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D106_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D107_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D108_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D109_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D110_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D150_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D151_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D152_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D154_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D155_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D200_Rte_Hdr_Type.cpp"
+"D:\Program C++\Garmin\garmin\D201_Rte_Hdr_Type.cpp"
+"D:\Program C++\Garmin\garmin\D202_Rte_Hdr_Type.cpp"
+"D:\Program C++\Garmin\garmin\D210_Rte_Link_Type.cpp"
+"D:\Program C++\Garmin\garmin\D301_Trk_Point_Type.cpp"
+"D:\Program C++\Garmin\garmin\D600_Date_Time_Type.cpp"
+"D:\Program C++\Garmin\garmin\garmin.cpp"
+"D:\Program C++\Garmin\garmin\Primitive.cpp"
+"D:\Program C++\Garmin\garmin\ProductData.cpp"
+"D:\Program C++\Garmin\garmin\ProtocolArray.cpp"
+"D:\Program C++\Garmin\garmin\D300_Trk_Point_Type.cpp"
+"D:\Program C++\Garmin\garmin\D302_Trk_Point_Type.cpp"
+"D:\Program C++\Garmin\garmin\D310_Trk_Hdr_Type.cpp"
+"D:\Program C++\Garmin\garmin\D311_Trk_Hdr_Type.cpp"
+"D:\Program C++\Garmin\garmin\D312_Trk_Hdr_Type.cpp"
+"D:\Program C++\Garmin\garmin\D400_Prx_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D403_Prx_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D450_Prx_Wpt_Type.cpp"
+"D:\Program C++\Garmin\garmin\D500_Almanac_Type.cpp"
+"D:\Program C++\Garmin\garmin\D501_Almanac_Type.cpp"
+"D:\Program C++\Garmin\garmin\D550_Almanac_Type.cpp"
+"D:\Program C++\Garmin\garmin\D551_Almanac_Type.cpp"
+"D:\Program C++\Garmin\garmin\D650_FlightBook_Record_Type.cpp"
+"D:\Program C++\Garmin\garmin\D700_Position_Type.cpp"
+"D:\Program C++\Garmin\garmin\D800_Pvt_Data_Type.cpp"
+"D:\Program C++\Garmin\garmin\D906_Lap_Type.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\admin\LOCALS~1\Temp\RSP340.tmp" 
+Creating temporary file "C:\DOCUME~1\admin\LOCALS~1\Temp\RSP341.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /FR"Debug/" /Fp"Debug/garmin.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Program C++\Garmin\garmin\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\admin\LOCALS~1\Temp\RSP341.tmp" 
+Creating temporary file "C:\DOCUME~1\admin\LOCALS~1\Temp\RSP342.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/garmin.pdb" /debug /machine:I386 /def:".\garmin.def" /out:"Debug/garmin.dll" /implib:"Debug/garmin.lib" /pdbtype:sept 
+".\Debug\Application.obj"
+".\Debug\BodyPacket.obj"
+".\Debug\BodyPacketImpl.obj"
+".\Debug\BodyPackets.obj"
+".\Debug\Communication.obj"
+".\Debug\D100_Wpt_Type.obj"
+".\Debug\D101_Wpt_Type.obj"
+".\Debug\D102_Wpt_Type.obj"
+".\Debug\D103_Wpt_Type.obj"
+".\Debug\D104_Wpt_Type.obj"
+".\Debug\D105_Wpt_Type.obj"
+".\Debug\D106_Wpt_Type.obj"
+".\Debug\D107_Wpt_Type.obj"
+".\Debug\D108_Wpt_Type.obj"
+".\Debug\D109_Wpt_Type.obj"
+".\Debug\D110_Wpt_Type.obj"
+".\Debug\D150_Wpt_Type.obj"
+".\Debug\D151_Wpt_Type.obj"
+".\Debug\D152_Wpt_Type.obj"
+".\Debug\D154_Wpt_Type.obj"
+".\Debug\D155_Wpt_Type.obj"
+".\Debug\D200_Rte_Hdr_Type.obj"
+".\Debug\D201_Rte_Hdr_Type.obj"
+".\Debug\D202_Rte_Hdr_Type.obj"
+".\Debug\D210_Rte_Link_Type.obj"
+".\Debug\D301_Trk_Point_Type.obj"
+".\Debug\D600_Date_Time_Type.obj"
+".\Debug\garmin.obj"
+".\Debug\Primitive.obj"
+".\Debug\ProductData.obj"
+".\Debug\ProtocolArray.obj"
+".\Debug\StdAfx.obj"
+".\Debug\garmin.res"
+".\Debug\D300_Trk_Point_Type.obj"
+".\Debug\D302_Trk_Point_Type.obj"
+".\Debug\D310_Trk_Hdr_Type.obj"
+".\Debug\D311_Trk_Hdr_Type.obj"
+".\Debug\D312_Trk_Hdr_Type.obj"
+".\Debug\D400_Prx_Wpt_Type.obj"
+".\Debug\D403_Prx_Wpt_Type.obj"
+".\Debug\D450_Prx_Wpt_Type.obj"
+".\Debug\D500_Almanac_Type.obj"
+".\Debug\D501_Almanac_Type.obj"
+".\Debug\D550_Almanac_Type.obj"
+".\Debug\D551_Almanac_Type.obj"
+".\Debug\D650_FlightBook_Record_Type.obj"
+".\Debug\D700_Position_Type.obj"
+".\Debug\D800_Pvt_Data_Type.obj"
+".\Debug\D906_Lap_Type.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\admin\LOCALS~1\Temp\RSP342.tmp"
+Creating temporary file "C:\DOCUME~1\admin\LOCALS~1\Temp\RSP343.bat" with contents
+[
+@echo off
+regsvr32 /s /c ".\Debug\garmin.dll"
+echo regsvr32 exec. time > ".\Debug\regsvr32.trg"
+]
+Creating command line "C:\DOCUME~1\admin\LOCALS~1\Temp\RSP343.bat"
+Creating Type Library...
+Microsoft (R) MIDL Compiler Version 5.01.0164  
+Copyright (c) Microsoft Corp 1991-1997. All rights reserved.
+Processing D:\Program C++\Garmin\garmin\garmin.idl
+garmin.idl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\oaidl.idl
+oaidl.idl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\objidl.idl
+objidl.idl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\unknwn.idl
+unknwn.idl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\wtypes.idl
+wtypes.idl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\ocidl.idl
+ocidl.idl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\oleidl.idl
+oleidl.idl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\servprov.idl
+servprov.idl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\urlmon.idl
+urlmon.idl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\msxml.idl
+msxml.idl
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Application.cpp
+BodyPacket.cpp
+BodyPacketImpl.cpp
+BodyPackets.cpp
+Communication.cpp
+D100_Wpt_Type.cpp
+D101_Wpt_Type.cpp
+D102_Wpt_Type.cpp
+D103_Wpt_Type.cpp
+D104_Wpt_Type.cpp
+D105_Wpt_Type.cpp
+D106_Wpt_Type.cpp
+D107_Wpt_Type.cpp
+D108_Wpt_Type.cpp
+D109_Wpt_Type.cpp
+D110_Wpt_Type.cpp
+D150_Wpt_Type.cpp
+D151_Wpt_Type.cpp
+D152_Wpt_Type.cpp
+D154_Wpt_Type.cpp
+Generating Code...
+Compiling...
+D155_Wpt_Type.cpp
+D200_Rte_Hdr_Type.cpp
+D201_Rte_Hdr_Type.cpp
+D202_Rte_Hdr_Type.cpp
+D210_Rte_Link_Type.cpp
+D301_Trk_Point_Type.cpp
+D600_Date_Time_Type.cpp
+garmin.cpp
+Primitive.cpp
+ProductData.cpp
+ProtocolArray.cpp
+D300_Trk_Point_Type.cpp
+D302_Trk_Point_Type.cpp
+D310_Trk_Hdr_Type.cpp
+D311_Trk_Hdr_Type.cpp
+D312_Trk_Hdr_Type.cpp
+D400_Prx_Wpt_Type.cpp
+D403_Prx_Wpt_Type.cpp
+D450_Prx_Wpt_Type.cpp
+D500_Almanac_Type.cpp
+Generating Code...
+Compiling...
+D501_Almanac_Type.cpp
+D550_Almanac_Type.cpp
+D551_Almanac_Type.cpp
+D650_FlightBook_Record_Type.cpp
+D700_Position_Type.cpp
+D800_Pvt_Data_Type.cpp
+D906_Lap_Type.cpp
+Generating Code...
+Linking...
+   Creating library Debug/garmin.lib and object Debug/garmin.exp
+<h3>Output Window</h3>
+Performing registration
+Creating temporary file "C:\DOCUME~1\admin\LOCALS~1\Temp\RSP351.tmp" with contents
+[
+/nologo /o"Debug/garmin.bsc" 
+".\Debug\StdAfx.sbr"
+".\Debug\Application.sbr"
+".\Debug\BodyPacket.sbr"
+".\Debug\BodyPacketImpl.sbr"
+".\Debug\BodyPackets.sbr"
+".\Debug\Communication.sbr"
+".\Debug\D100_Wpt_Type.sbr"
+".\Debug\D101_Wpt_Type.sbr"
+".\Debug\D102_Wpt_Type.sbr"
+".\Debug\D103_Wpt_Type.sbr"
+".\Debug\D104_Wpt_Type.sbr"
+".\Debug\D105_Wpt_Type.sbr"
+".\Debug\D106_Wpt_Type.sbr"
+".\Debug\D107_Wpt_Type.sbr"
+".\Debug\D108_Wpt_Type.sbr"
+".\Debug\D109_Wpt_Type.sbr"
+".\Debug\D110_Wpt_Type.sbr"
+".\Debug\D150_Wpt_Type.sbr"
+".\Debug\D151_Wpt_Type.sbr"
+".\Debug\D152_Wpt_Type.sbr"
+".\Debug\D154_Wpt_Type.sbr"
+".\Debug\D155_Wpt_Type.sbr"
+".\Debug\D200_Rte_Hdr_Type.sbr"
+".\Debug\D201_Rte_Hdr_Type.sbr"
+".\Debug\D202_Rte_Hdr_Type.sbr"
+".\Debug\D210_Rte_Link_Type.sbr"
+".\Debug\D301_Trk_Point_Type.sbr"
+".\Debug\D600_Date_Time_Type.sbr"
+".\Debug\garmin.sbr"
+".\Debug\Primitive.sbr"
+".\Debug\ProductData.sbr"
+".\Debug\ProtocolArray.sbr"
+".\Debug\D300_Trk_Point_Type.sbr"
+".\Debug\D302_Trk_Point_Type.sbr"
+".\Debug\D310_Trk_Hdr_Type.sbr"
+".\Debug\D311_Trk_Hdr_Type.sbr"
+".\Debug\D312_Trk_Hdr_Type.sbr"
+".\Debug\D400_Prx_Wpt_Type.sbr"
+".\Debug\D403_Prx_Wpt_Type.sbr"
+".\Debug\D450_Prx_Wpt_Type.sbr"
+".\Debug\D500_Almanac_Type.sbr"
+".\Debug\D501_Almanac_Type.sbr"
+".\Debug\D550_Almanac_Type.sbr"
+".\Debug\D551_Almanac_Type.sbr"
+".\Debug\D650_FlightBook_Record_Type.sbr"
+".\Debug\D700_Position_Type.sbr"
+".\Debug\D800_Pvt_Data_Type.sbr"
+".\Debug\D906_Lap_Type.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\admin\LOCALS~1\Temp\RSP351.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+garmin.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

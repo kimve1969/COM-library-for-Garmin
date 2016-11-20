@@ -1,0 +1,25 @@
+HKCR
+{
+	Garmin.Primitive.1 = s 'Primitive Class'
+	{
+		CLSID = s '{23507B85-EA6D-4CEC-B600-759CEE3E5E04}'
+	}
+	Garmin.Primitive = s 'Primitive Class'
+	{
+		CLSID = s '{23507B85-EA6D-4CEC-B600-759CEE3E5E04}'
+		CurVer = s 'Garmin.Primitive.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {23507B85-EA6D-4CEC-B600-759CEE3E5E04} = s 'Primitive Class'
+		{
+			ProgID = s 'Garmin.Primitive.1'
+			VersionIndependentProgID = s 'Garmin.Primitive'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}

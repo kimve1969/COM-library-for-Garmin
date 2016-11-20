@@ -1,0 +1,1128 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (2eb9930b).
+//
+// garmin.tlh
+//
+// C++ source equivalent of Win32 type library D:\Project C++\Garmin\garmin\Debug\garmin.dll
+// compiler-generated file created 09/10/04 at 19:33:56 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace Garmin {
+
+//
+// Forward references and typedefs
+//
+
+struct /* coclass */ Communication;
+struct __declspec(uuid("0f9a5d4a-64da-4cb6-9909-25c42dc10041"))
+/* dual interface */ ICommunication;
+struct /* coclass */ BodyPacket;
+struct __declspec(uuid("730af596-177b-4027-9ebb-fc915e917ba2"))
+/* dual interface */ IBodyPacket;
+struct /* coclass */ Application;
+struct __declspec(uuid("16e7c83b-cfda-49ad-aa14-cebddac4f845"))
+/* dual interface */ IApplication;
+struct /* coclass */ ProtocolArray;
+struct __declspec(uuid("18228139-1608-40f8-a9b4-e36782ca4ace"))
+/* dual interface */ IProtocolArray;
+struct /* coclass */ ProductData;
+struct __declspec(uuid("751f1e73-4cfa-4f84-a8b1-f08f10dedbcf"))
+/* dual interface */ IProductData;
+struct /* coclass */ BodyPackets;
+struct __declspec(uuid("f7f3d000-cbb7-41c0-8d89-60517b335475"))
+/* dual interface */ IBodyPackets;
+struct /* coclass */ Primitive;
+struct __declspec(uuid("ebdd5b58-3169-4d98-84f7-88d1de9bbf85"))
+/* dual interface */ IPrimitive;
+struct /* coclass */ D100_Wpt_Type;
+struct __declspec(uuid("e95d7cbd-4282-455c-9675-e78429924f2a"))
+/* dual interface */ ID100_Wpt_Type;
+struct /* coclass */ D101_Wpt_Type;
+struct __declspec(uuid("e88fa770-0531-4501-b776-5e2d2cbe6557"))
+/* dual interface */ ID101_Wpt_Type;
+struct /* coclass */ D108_Wpt_Type;
+struct __declspec(uuid("7be71d06-70ac-406f-863d-b3ac86dfcc81"))
+/* dual interface */ ID108_Wpt_Type;
+struct __declspec(uuid("159762e6-8b54-43b8-acb7-4fe4ae5bdffb"))
+/* dual interface */ IDXXX_Wpt_Type;
+struct __declspec(uuid("b892e0af-1d97-4d8f-8362-974e81101551"))
+/* dual interface */ IGarminDataType;
+struct /* coclass */ D301_Trk_Point_Type;
+struct __declspec(uuid("cc178575-0663-49c0-bdef-b64c5d7b93b5"))
+/* dual interface */ ID301_Trk_Point_Type;
+struct __declspec(uuid("b6e9b4d0-4823-426b-9c03-faf0bb148151"))
+/* dual interface */ IDXXX_Trk_Point_Type;
+struct /* coclass */ D600_Date_Time_Type;
+struct __declspec(uuid("85540371-1db0-45d6-8916-592eafab1ca7"))
+/* dual interface */ ID600_Date_Time_Type;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(ICommunication, __uuidof(ICommunication));
+_COM_SMARTPTR_TYPEDEF(IBodyPacket, __uuidof(IBodyPacket));
+_COM_SMARTPTR_TYPEDEF(IApplication, __uuidof(IApplication));
+_COM_SMARTPTR_TYPEDEF(IProtocolArray, __uuidof(IProtocolArray));
+_COM_SMARTPTR_TYPEDEF(IProductData, __uuidof(IProductData));
+_COM_SMARTPTR_TYPEDEF(IBodyPackets, __uuidof(IBodyPackets));
+_COM_SMARTPTR_TYPEDEF(IPrimitive, __uuidof(IPrimitive));
+_COM_SMARTPTR_TYPEDEF(ID100_Wpt_Type, __uuidof(ID100_Wpt_Type));
+_COM_SMARTPTR_TYPEDEF(ID101_Wpt_Type, __uuidof(ID101_Wpt_Type));
+_COM_SMARTPTR_TYPEDEF(IGarminDataType, __uuidof(IGarminDataType));
+_COM_SMARTPTR_TYPEDEF(IDXXX_Wpt_Type, __uuidof(IDXXX_Wpt_Type));
+_COM_SMARTPTR_TYPEDEF(ID108_Wpt_Type, __uuidof(ID108_Wpt_Type));
+_COM_SMARTPTR_TYPEDEF(IDXXX_Trk_Point_Type, __uuidof(IDXXX_Trk_Point_Type));
+_COM_SMARTPTR_TYPEDEF(ID301_Trk_Point_Type, __uuidof(ID301_Trk_Point_Type));
+_COM_SMARTPTR_TYPEDEF(ID600_Date_Time_Type, __uuidof(ID600_Date_Time_Type));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("f7aba92d-da5a-4522-a60f-0f29c103e299"))
+Communication;
+    // [ default ] interface ICommunication
+
+struct __declspec(uuid("0f9a5d4a-64da-4cb6-9909-25c42dc10041"))
+ICommunication : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT OpenPort (
+        _bstr_t bstrPort );
+    HRESULT ClosePort ( );
+    IDispatchPtr ReadBodyPacket ( );
+    HRESULT WriteBodyPacket (
+        IDispatch * pdisp );
+    HRESULT Send (
+        IDispatch * pdisp );
+    IDispatchPtr Reciver ( );
+    HRESULT Clear ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_OpenPort (
+        BSTR bstrPort ) = 0;
+    virtual HRESULT __stdcall raw_ClosePort ( ) = 0;
+    virtual HRESULT __stdcall raw_ReadBodyPacket (
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall raw_WriteBodyPacket (
+        IDispatch * pdisp ) = 0;
+    virtual HRESULT __stdcall raw_Send (
+        IDispatch * pdisp ) = 0;
+    virtual HRESULT __stdcall raw_Reciver (
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall raw_Clear ( ) = 0;
+};
+
+struct __declspec(uuid("e2c4b620-60de-40f5-9e8d-cab31b6456f6"))
+BodyPacket;
+    // [ default ] interface IBodyPacket
+
+struct __declspec(uuid("730af596-177b-4027-9ebb-fc915e917ba2"))
+IBodyPacket : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetPacketID,put=PutPacketID))
+    _variant_t PacketID;
+    __declspec(property(get=GetCount))
+    _variant_t Count;
+    __declspec(property(get=GetStatus))
+    _variant_t Status;
+    __declspec(property(get=GetACK))
+    _variant_t ACK;
+    __declspec(property(get=GetNAK))
+    _variant_t NAK;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetPacketID ( );
+    void PutPacketID (
+        const _variant_t & pVal );
+    _variant_t GetCount ( );
+    _variant_t GetStatus ( );
+    HRESULT Add (
+        const _variant_t & Val );
+    _variant_t Item (
+        const _variant_t & varIndx );
+    HRESULT Clear ( );
+    _variant_t GetACK ( );
+    _variant_t GetNAK ( );
+    HRESULT SetACKPacket (
+        const _variant_t & varPacketID );
+    HRESULT SetNAKPacket (
+        const _variant_t & varPacketID );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_PacketID (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall put_PacketID (
+        VARIANT pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Status (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Add (
+        VARIANT Val ) = 0;
+    virtual HRESULT __stdcall raw_Item (
+        VARIANT varIndx,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Clear ( ) = 0;
+    virtual HRESULT __stdcall get_ACK (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_NAK (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall raw_SetACKPacket (
+        VARIANT varPacketID ) = 0;
+    virtual HRESULT __stdcall raw_SetNAKPacket (
+        VARIANT varPacketID ) = 0;
+};
+
+struct __declspec(uuid("e881eb23-1ee8-4ca2-8fb6-e44ba19e8bf4"))
+Application;
+    // [ default ] interface IApplication
+
+struct __declspec(uuid("16e7c83b-cfda-49ad-aa14-cebddac4f845"))
+IApplication : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(put=PutRefCommunication))
+    IDispatchPtr Communication;
+    __declspec(property(get=GetProductData))
+    IDispatchPtr ProductData;
+    __declspec(property(get=GetProtocolArray))
+    IDispatchPtr ProtocolArray;
+    __declspec(property(get=GetNative,put=PutNative))
+    long Native;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    void PutRefCommunication (
+        IDispatch * _arg1 );
+    IDispatchPtr GetProductData ( );
+    IDispatchPtr GetProtocolArray ( );
+    HRESULT Cmnd_Abort_Transfer ( );
+    HRESULT Cmnd_Turn_Off_Pwr ( );
+    HRESULT Cmnd_Start_Pvt_Data ( );
+    HRESULT Cmnd_Stop_Pvt_Data ( );
+    IDispatchPtr Cmnd_Get_Transfer_Alm ( );
+    IDispatchPtr Cmnd_Get_Transfer_Posn ( );
+    IDispatchPtr Cmnd_Get_Transfer_Prx ( );
+    IDispatchPtr Cmnd_Get_Transfer_Rte ( );
+    IDispatchPtr Cmnd_Get_Transfer_Time ( );
+    IDispatchPtr Cmnd_Get_Transfer_Trk ( );
+    IDispatchPtr Cmnd_Get_Transfer_Wpt ( );
+    IDispatchPtr Cmnd_Get_FlightBook_Transfer ( );
+    IDispatchPtr Cmnd_Get_Transfer_Laps ( );
+    HRESULT Cmnd_Set_Transfer_Alm (
+        IDispatch * pdisp );
+    HRESULT Cmnd_Set_Transfer_Posn (
+        IDispatch * pdisp );
+    HRESULT Cmnd_Set_Transfer_Prx (
+        IDispatch * pdisp );
+    HRESULT Cmnd_Set_Transfer_Rte (
+        IDispatch * pdisp );
+    HRESULT Cmnd_Set_Transfer_Time (
+        IDispatch * pdisp );
+    HRESULT Cmnd_Set_Transfer_Trk (
+        IDispatch * pdisp );
+    HRESULT Cmnd_Set_Transfer_Wpt (
+        IDispatch * pdisp );
+    HRESULT Cmnd_Set_FlightBook_Transfer (
+        IDispatch * pdisp );
+    HRESULT Cmnd_Set_Transfer_Laps (
+        IDispatch * pdisp );
+    IDispatchPtr CreateBodyPacket (
+        _bstr_t pid_name );
+    long GetNative ( );
+    void PutNative (
+        long pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall putref_Communication (
+        IDispatch * _arg1 ) = 0;
+    virtual HRESULT __stdcall get_ProductData (
+        IDispatch * * pVal ) = 0;
+    virtual HRESULT __stdcall get_ProtocolArray (
+        IDispatch * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Abort_Transfer ( ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Turn_Off_Pwr ( ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Start_Pvt_Data ( ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Stop_Pvt_Data ( ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Get_Transfer_Alm (
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Get_Transfer_Posn (
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Get_Transfer_Prx (
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Get_Transfer_Rte (
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Get_Transfer_Time (
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Get_Transfer_Trk (
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Get_Transfer_Wpt (
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Get_FlightBook_Transfer (
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Get_Transfer_Laps (
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Set_Transfer_Alm (
+        IDispatch * pdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Set_Transfer_Posn (
+        IDispatch * pdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Set_Transfer_Prx (
+        IDispatch * pdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Set_Transfer_Rte (
+        IDispatch * pdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Set_Transfer_Time (
+        IDispatch * pdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Set_Transfer_Trk (
+        IDispatch * pdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Set_Transfer_Wpt (
+        IDispatch * pdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Set_FlightBook_Transfer (
+        IDispatch * pdisp ) = 0;
+    virtual HRESULT __stdcall raw_Cmnd_Set_Transfer_Laps (
+        IDispatch * pdisp ) = 0;
+    virtual HRESULT __stdcall raw_CreateBodyPacket (
+        BSTR pid_name,
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall get_Native (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_Native (
+        long pVal ) = 0;
+};
+
+struct __declspec(uuid("ccf8e6bb-01e6-4cbd-892f-f0021c98bc6d"))
+ProtocolArray;
+    // [ default ] interface IProtocolArray
+
+struct __declspec(uuid("18228139-1608-40f8-a9b4-e36782ca4ace"))
+IProtocolArray : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=GetWaypoint_Transfer_Protocol))
+    _bstr_t Waypoint_Transfer_Protocol;
+    __declspec(property(get=GetRoute_Transfer_Protocol))
+    _bstr_t Route_Transfer_Protocol;
+    __declspec(property(get=GetTrack_Log_Transfer_Protocol))
+    _bstr_t Track_Log_Transfer_Protocol;
+    __declspec(property(get=GetProximity_Waypoint_Transfer_Protocol))
+    _bstr_t Proximity_Waypoint_Transfer_Protocol;
+    __declspec(property(get=GetAlmanac_Transfer_Protocol))
+    _bstr_t Almanac_Transfer_Protocol;
+    __declspec(property(get=GetDate_and_Time_Initialization_Protocol))
+    _bstr_t Date_and_Time_Initialization_Protocol;
+    __declspec(property(get=GetFlightBook_Transfer_Protocol))
+    _bstr_t FlightBook_Transfer_Protocol;
+    __declspec(property(get=GetPosition_Initialization_Protocol))
+    _bstr_t Position_Initialization_Protocol;
+    __declspec(property(get=GetPVT_Data_Protocol))
+    _bstr_t PVT_Data_Protocol;
+    __declspec(property(get=GetLap_Transfer_Protocol))
+    _bstr_t Lap_Transfer_Protocol;
+    __declspec(property(get=GetLink_Protocol))
+    _bstr_t Link_Protocol;
+    __declspec(property(get=GetDevice_Command_Protocol))
+    _bstr_t Device_Command_Protocol;
+    __declspec(property(get=GetPhysical_Protocol))
+    _bstr_t Physical_Protocol;
+    __declspec(property(get=GetWaypoint_Data_Type))
+    _bstr_t Waypoint_Data_Type;
+    __declspec(property(get=GetRoute_Header_Data_Type))
+    _bstr_t Route_Header_Data_Type;
+    __declspec(property(get=GetRoute_Waypoint_Data_Type))
+    _bstr_t Route_Waypoint_Data_Type;
+    __declspec(property(get=GetRoute_Link_Data_Type))
+    _bstr_t Route_Link_Data_Type;
+    __declspec(property(get=GetAlmanac_Data_Type))
+    _bstr_t Almanac_Data_Type;
+    __declspec(property(get=GetTrack_Header_Data_Type))
+    _bstr_t Track_Header_Data_Type;
+    __declspec(property(get=GetTrack_Data_Type))
+    _bstr_t Track_Data_Type;
+    __declspec(property(get=GetPVT_Data_Type))
+    _bstr_t PVT_Data_Type;
+    __declspec(property(get=GetFlightBook_Data_Type))
+    _bstr_t FlightBook_Data_Type;
+    __declspec(property(get=GetLap_Data_Type))
+    _bstr_t Lap_Data_Type;
+    __declspec(property(get=GetPosition_Data_Type))
+    _bstr_t Position_Data_Type;
+    __declspec(property(get=GetDate_Time_Data_Type))
+    _bstr_t Date_Time_Data_Type;
+    __declspec(property(get=GetProximity_Waypoint_Data_Type))
+    _bstr_t Proximity_Waypoint_Data_Type;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t Item (
+        long indx );
+    long GetCount ( );
+    _bstr_t GetWaypoint_Transfer_Protocol ( );
+    _bstr_t GetRoute_Transfer_Protocol ( );
+    _bstr_t GetTrack_Log_Transfer_Protocol ( );
+    _bstr_t GetProximity_Waypoint_Transfer_Protocol ( );
+    _bstr_t GetAlmanac_Transfer_Protocol ( );
+    _bstr_t GetDate_and_Time_Initialization_Protocol ( );
+    _bstr_t GetFlightBook_Transfer_Protocol ( );
+    _bstr_t GetPosition_Initialization_Protocol ( );
+    _bstr_t GetPVT_Data_Protocol ( );
+    _bstr_t GetLap_Transfer_Protocol ( );
+    _bstr_t GetLink_Protocol ( );
+    _bstr_t GetDevice_Command_Protocol ( );
+    _bstr_t GetPhysical_Protocol ( );
+    _bstr_t GetWaypoint_Data_Type ( );
+    _bstr_t GetRoute_Header_Data_Type ( );
+    _bstr_t GetRoute_Waypoint_Data_Type ( );
+    _bstr_t GetRoute_Link_Data_Type ( );
+    _bstr_t GetAlmanac_Data_Type ( );
+    _bstr_t GetTrack_Header_Data_Type ( );
+    _bstr_t GetTrack_Data_Type ( );
+    _bstr_t GetPVT_Data_Type ( );
+    _bstr_t GetFlightBook_Data_Type ( );
+    _bstr_t GetLap_Data_Type ( );
+    _bstr_t GetPosition_Data_Type ( );
+    _bstr_t GetDate_Time_Data_Type ( );
+    _bstr_t GetProximity_Waypoint_Data_Type ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_Item (
+        long indx,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_Waypoint_Transfer_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Route_Transfer_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Track_Log_Transfer_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Proximity_Waypoint_Transfer_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Almanac_Transfer_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Date_and_Time_Initialization_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_FlightBook_Transfer_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Position_Initialization_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_PVT_Data_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Lap_Transfer_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Link_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Device_Command_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Physical_Protocol (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Waypoint_Data_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Route_Header_Data_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Route_Waypoint_Data_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Route_Link_Data_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Almanac_Data_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Track_Header_Data_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Track_Data_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_PVT_Data_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_FlightBook_Data_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Lap_Data_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Position_Data_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Date_Time_Data_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Proximity_Waypoint_Data_Type (
+        BSTR * pVal ) = 0;
+};
+
+struct __declspec(uuid("27fb9c7c-881d-4342-8c95-b64789c12968"))
+ProductData;
+    // [ default ] interface IProductData
+
+struct __declspec(uuid("751f1e73-4cfa-4f84-a8b1-f08f10dedbcf"))
+IProductData : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=Getproduct_ID))
+    int product_ID;
+    __declspec(property(get=Getsoftware_version))
+    int software_version;
+    __declspec(property(get=Getproduct_description))
+    _variant_t product_description;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    int Getproduct_ID ( );
+    int Getsoftware_version ( );
+    _variant_t Getproduct_description ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_product_ID (
+        int * pVal ) = 0;
+    virtual HRESULT __stdcall get_software_version (
+        int * pVal ) = 0;
+    virtual HRESULT __stdcall get_product_description (
+        VARIANT * pVal ) = 0;
+};
+
+struct __declspec(uuid("b3528481-0dd5-47aa-969a-0068152cbc9d"))
+BodyPackets;
+    // [ default ] interface IBodyPackets
+
+struct __declspec(uuid("f7f3d000-cbb7-41c0-8d89-60517b335475"))
+IBodyPackets : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IDispatchPtr Item (
+        long index );
+    long GetCount ( );
+    HRESULT Add (
+        IDispatch * pnewBodyPacket );
+    HRESULT Remove (
+        long index );
+    IUnknownPtr Get_NewEnum ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_Item (
+        long index,
+        IDispatch * * ppdisp ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Add (
+        IDispatch * pnewBodyPacket ) = 0;
+    virtual HRESULT __stdcall raw_Remove (
+        long index ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * pVal ) = 0;
+};
+
+struct __declspec(uuid("23507b85-ea6d-4cec-b600-759cee3e5e04"))
+Primitive;
+    // [ default ] interface IPrimitive
+
+struct __declspec(uuid("ebdd5b58-3169-4d98-84f7-88d1de9bbf85"))
+IPrimitive : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    _variant_t Count;
+    __declspec(property(get=Getgfloat,put=Putgfloat))
+    float gfloat;
+    __declspec(property(get=Getgdouble,put=Putgdouble))
+    double gdouble;
+    __declspec(property(get=Getglong,put=Putglong))
+    long glong;
+    __declspec(property(get=Getgint,put=Putgint))
+    short gint;
+    __declspec(property(get=Getgword,put=Putgword))
+    unsigned short gword;
+    __declspec(property(get=Getglongword,put=Putglongword))
+    unsigned long glongword;
+    __declspec(property(get=Getgsemicircles,put=Putgsemicircles))
+    long gsemicircles;
+    __declspec(property(get=Getgradians,put=Putgradians))
+    double gradians;
+    __declspec(property(get=Getgdegrees_from_semicircles))
+    double gdegrees_from_semicircles;
+    __declspec(property(get=Getgdegrees_from_radians))
+    double gdegrees_from_radians;
+    __declspec(property(put=Putgdegrees))
+    double gdegrees;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Add (
+        const _variant_t & Val );
+    HRESULT Clear ( );
+    _variant_t GetCount ( );
+    float Getgfloat ( );
+    void Putgfloat (
+        float pVal );
+    double Getgdouble ( );
+    void Putgdouble (
+        double pVal );
+    long Getglong ( );
+    void Putglong (
+        long pVal );
+    short Getgint ( );
+    void Putgint (
+        short pVal );
+    unsigned short Getgword ( );
+    void Putgword (
+        unsigned short pVal );
+    unsigned long Getglongword ( );
+    void Putglongword (
+        unsigned long pVal );
+    _variant_t Item (
+        long indx );
+    long Getgsemicircles ( );
+    void Putgsemicircles (
+        long pVal );
+    double Getgradians ( );
+    void Putgradians (
+        double pVal );
+    double Getgdegrees_from_semicircles ( );
+    double Getgdegrees_from_radians ( );
+    void Putgdegrees (
+        double _arg1 );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_Add (
+        VARIANT Val ) = 0;
+    virtual HRESULT __stdcall raw_Clear ( ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_gfloat (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_gfloat (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_gdouble (
+        double * pVal ) = 0;
+    virtual HRESULT __stdcall put_gdouble (
+        double pVal ) = 0;
+    virtual HRESULT __stdcall get_glong (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_glong (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_gint (
+        short * pVal ) = 0;
+    virtual HRESULT __stdcall put_gint (
+        short pVal ) = 0;
+    virtual HRESULT __stdcall get_gword (
+        unsigned short * pVal ) = 0;
+    virtual HRESULT __stdcall put_gword (
+        unsigned short pVal ) = 0;
+    virtual HRESULT __stdcall get_glongword (
+        unsigned long * pVal ) = 0;
+    virtual HRESULT __stdcall put_glongword (
+        unsigned long pVal ) = 0;
+    virtual HRESULT __stdcall raw_Item (
+        long indx,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_gsemicircles (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_gsemicircles (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_gradians (
+        double * pVal ) = 0;
+    virtual HRESULT __stdcall put_gradians (
+        double pVal ) = 0;
+    virtual HRESULT __stdcall get_gdegrees_from_semicircles (
+        double * pVal ) = 0;
+    virtual HRESULT __stdcall get_gdegrees_from_radians (
+        double * pVal ) = 0;
+    virtual HRESULT __stdcall put_gdegrees (
+        double _arg1 ) = 0;
+};
+
+struct __declspec(uuid("4c91c837-d229-4b4a-9709-d6c0f69bc39e"))
+D100_Wpt_Type;
+    // [ default ] interface ID100_Wpt_Type
+
+struct __declspec(uuid("e95d7cbd-4282-455c-9675-e78429924f2a"))
+ID100_Wpt_Type : IDispatch
+{};
+
+struct __declspec(uuid("43f46bef-7111-4de7-af7d-5e99f69b7040"))
+D101_Wpt_Type;
+    // [ default ] interface ID101_Wpt_Type
+
+struct __declspec(uuid("e88fa770-0531-4501-b776-5e2d2cbe6557"))
+ID101_Wpt_Type : IDispatch
+{};
+
+struct __declspec(uuid("de648c25-fda6-4e41-89e0-c8a2186c9b2d"))
+D108_Wpt_Type;
+    // [ default ] interface ID108_Wpt_Type
+    // interface IDXXX_Wpt_Type
+    // interface IGarminDataType
+
+struct __declspec(uuid("b892e0af-1d97-4d8f-8362-974e81101551"))
+IGarminDataType : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetType))
+    _bstr_t Type;
+    __declspec(property(get=GetIDXXX_Type))
+    IDispatchPtr IDXXX_Type;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetType ( );
+    IDispatchPtr GetIDXXX_Type ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Type (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_IDXXX_Type (
+        IDispatch * * pVal ) = 0;
+};
+
+struct __declspec(uuid("159762e6-8b54-43b8-acb7-4fe4ae5bdffb"))
+IDXXX_Wpt_Type : IGarminDataType
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=Getident,put=Putident))
+    _bstr_t ident;
+    __declspec(property(get=Getlon,put=Putlon))
+    long lon;
+    __declspec(property(get=Getlat,put=Putlat))
+    long lat;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t Getident ( );
+    void Putident (
+        _bstr_t pVal );
+    long Getlon ( );
+    void Putlon (
+        long pVal );
+    long Getlat ( );
+    void Putlat (
+        long pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_ident (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_ident (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_lon (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_lon (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_lat (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_lat (
+        long pVal ) = 0;
+};
+
+struct __declspec(uuid("7be71d06-70ac-406f-863d-b3ac86dfcc81"))
+ID108_Wpt_Type : IDXXX_Wpt_Type
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=Getcolor,put=Putcolor))
+    unsigned int color;
+    __declspec(property(get=Getwpt_class,put=Putwpt_class))
+    unsigned int wpt_class;
+    __declspec(property(get=Getdspl,put=Putdspl))
+    unsigned int dspl;
+    __declspec(property(get=Getattr,put=Putattr))
+    unsigned int attr;
+    __declspec(property(get=Getsmbl,put=Putsmbl))
+    int smbl;
+    __declspec(property(get=Getalt,put=Putalt))
+    float alt;
+    __declspec(property(get=Getdpth,put=Putdpth))
+    float dpth;
+    __declspec(property(get=Getdist,put=Putdist))
+    float dist;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    unsigned int Getcolor ( );
+    void Putcolor (
+        unsigned int pVal );
+    unsigned int Getwpt_class ( );
+    void Putwpt_class (
+        unsigned int pVal );
+    unsigned int Getdspl ( );
+    void Putdspl (
+        unsigned int pVal );
+    unsigned int Getattr ( );
+    void Putattr (
+        unsigned int pVal );
+    int Getsmbl ( );
+    void Putsmbl (
+        int pVal );
+    float Getalt ( );
+    void Putalt (
+        float pVal );
+    float Getdpth ( );
+    void Putdpth (
+        float pVal );
+    float Getdist ( );
+    void Putdist (
+        float pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_color (
+        unsigned int * pVal ) = 0;
+    virtual HRESULT __stdcall put_color (
+        unsigned int pVal ) = 0;
+    virtual HRESULT __stdcall get_wpt_class (
+        unsigned int * pVal ) = 0;
+    virtual HRESULT __stdcall put_wpt_class (
+        unsigned int pVal ) = 0;
+    virtual HRESULT __stdcall get_dspl (
+        unsigned int * pVal ) = 0;
+    virtual HRESULT __stdcall put_dspl (
+        unsigned int pVal ) = 0;
+    virtual HRESULT __stdcall get_attr (
+        unsigned int * pVal ) = 0;
+    virtual HRESULT __stdcall put_attr (
+        unsigned int pVal ) = 0;
+    virtual HRESULT __stdcall get_smbl (
+        int * pVal ) = 0;
+    virtual HRESULT __stdcall put_smbl (
+        int pVal ) = 0;
+    virtual HRESULT __stdcall get_alt (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_alt (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_dpth (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_dpth (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_dist (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_dist (
+        float pVal ) = 0;
+};
+
+struct __declspec(uuid("28d9cc60-6f9a-4cc9-bc0c-290ca58c3e0b"))
+D301_Trk_Point_Type;
+    // [ default ] interface ID301_Trk_Point_Type
+    // interface IDXXX_Trk_Point_Type
+    // interface IGarminDataType
+
+struct __declspec(uuid("b6e9b4d0-4823-426b-9c03-faf0bb148151"))
+IDXXX_Trk_Point_Type : IGarminDataType
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=Getlat,put=Putlat))
+    long lat;
+    __declspec(property(get=Getlon,put=Putlon))
+    long lon;
+    __declspec(property(get=Gettime,put=Puttime))
+    unsigned long time;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long Getlat ( );
+    void Putlat (
+        long pVal );
+    long Getlon ( );
+    void Putlon (
+        long pVal );
+    unsigned long Gettime ( );
+    void Puttime (
+        unsigned long pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_lat (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_lat (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_lon (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_lon (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_time (
+        unsigned long * pVal ) = 0;
+    virtual HRESULT __stdcall put_time (
+        unsigned long pVal ) = 0;
+};
+
+struct __declspec(uuid("cc178575-0663-49c0-bdef-b64c5d7b93b5"))
+ID301_Trk_Point_Type : IDXXX_Trk_Point_Type
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=Getalt,put=Putalt))
+    float alt;
+    __declspec(property(get=Getdpth,put=Putdpth))
+    float dpth;
+    __declspec(property(get=Getnew_trk,put=Putnew_trk))
+    long new_trk;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    float Getalt ( );
+    void Putalt (
+        float pVal );
+    float Getdpth ( );
+    void Putdpth (
+        float pVal );
+    long Getnew_trk ( );
+    void Putnew_trk (
+        long pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_alt (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_alt (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_dpth (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_dpth (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_new_trk (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_new_trk (
+        long pVal ) = 0;
+};
+
+struct __declspec(uuid("4a96c561-c3dc-4e9c-b2d9-985c6d9853ae"))
+D600_Date_Time_Type;
+    // [ default ] interface ID600_Date_Time_Type
+    // interface IGarminDataType
+
+struct __declspec(uuid("85540371-1db0-45d6-8916-592eafab1ca7"))
+ID600_Date_Time_Type : IGarminDataType
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=Getmonth,put=Putmonth))
+    unsigned int month;
+    __declspec(property(get=Getday,put=Putday))
+    unsigned int day;
+    __declspec(property(get=Getyear,put=Putyear))
+    unsigned int year;
+    __declspec(property(get=Gethour,put=Puthour))
+    unsigned int hour;
+    __declspec(property(get=Getminute,put=Putminute))
+    unsigned int minute;
+    __declspec(property(get=Getsecond,put=Putsecond))
+    unsigned int second;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    unsigned int Getmonth ( );
+    void Putmonth (
+        unsigned int pVal );
+    unsigned int Getday ( );
+    void Putday (
+        unsigned int pVal );
+    unsigned int Getyear ( );
+    void Putyear (
+        unsigned int pVal );
+    unsigned int Gethour ( );
+    void Puthour (
+        unsigned int pVal );
+    unsigned int Getminute ( );
+    void Putminute (
+        unsigned int pVal );
+    unsigned int Getsecond ( );
+    void Putsecond (
+        unsigned int pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_month (
+        unsigned int * pVal ) = 0;
+    virtual HRESULT __stdcall put_month (
+        unsigned int pVal ) = 0;
+    virtual HRESULT __stdcall get_day (
+        unsigned int * pVal ) = 0;
+    virtual HRESULT __stdcall put_day (
+        unsigned int pVal ) = 0;
+    virtual HRESULT __stdcall get_year (
+        unsigned int * pVal ) = 0;
+    virtual HRESULT __stdcall put_year (
+        unsigned int pVal ) = 0;
+    virtual HRESULT __stdcall get_hour (
+        unsigned int * pVal ) = 0;
+    virtual HRESULT __stdcall put_hour (
+        unsigned int pVal ) = 0;
+    virtual HRESULT __stdcall get_minute (
+        unsigned int * pVal ) = 0;
+    virtual HRESULT __stdcall put_minute (
+        unsigned int pVal ) = 0;
+    virtual HRESULT __stdcall get_second (
+        unsigned int * pVal ) = 0;
+    virtual HRESULT __stdcall put_second (
+        unsigned int pVal ) = 0;
+};
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_Garmin =
+    {0xd045dcc4,0xccc5,0x434b,{0x97,0xe6,0x76,0xa2,0xd9,0xfe,0x01,0xea}};
+extern "C" const GUID __declspec(selectany) CLSID_Communication =
+    {0xf7aba92d,0xda5a,0x4522,{0xa6,0x0f,0x0f,0x29,0xc1,0x03,0xe2,0x99}};
+extern "C" const GUID __declspec(selectany) IID_ICommunication =
+    {0x0f9a5d4a,0x64da,0x4cb6,{0x99,0x09,0x25,0xc4,0x2d,0xc1,0x00,0x41}};
+extern "C" const GUID __declspec(selectany) CLSID_BodyPacket =
+    {0xe2c4b620,0x60de,0x40f5,{0x9e,0x8d,0xca,0xb3,0x1b,0x64,0x56,0xf6}};
+extern "C" const GUID __declspec(selectany) IID_IBodyPacket =
+    {0x730af596,0x177b,0x4027,{0x9e,0xbb,0xfc,0x91,0x5e,0x91,0x7b,0xa2}};
+extern "C" const GUID __declspec(selectany) CLSID_Application =
+    {0xe881eb23,0x1ee8,0x4ca2,{0x8f,0xb6,0xe4,0x4b,0xa1,0x9e,0x8b,0xf4}};
+extern "C" const GUID __declspec(selectany) IID_IApplication =
+    {0x16e7c83b,0xcfda,0x49ad,{0xaa,0x14,0xce,0xbd,0xda,0xc4,0xf8,0x45}};
+extern "C" const GUID __declspec(selectany) CLSID_ProtocolArray =
+    {0xccf8e6bb,0x01e6,0x4cbd,{0x89,0x2f,0xf0,0x02,0x1c,0x98,0xbc,0x6d}};
+extern "C" const GUID __declspec(selectany) IID_IProtocolArray =
+    {0x18228139,0x1608,0x40f8,{0xa9,0xb4,0xe3,0x67,0x82,0xca,0x4a,0xce}};
+extern "C" const GUID __declspec(selectany) CLSID_ProductData =
+    {0x27fb9c7c,0x881d,0x4342,{0x8c,0x95,0xb6,0x47,0x89,0xc1,0x29,0x68}};
+extern "C" const GUID __declspec(selectany) IID_IProductData =
+    {0x751f1e73,0x4cfa,0x4f84,{0xa8,0xb1,0xf0,0x8f,0x10,0xde,0xdb,0xcf}};
+extern "C" const GUID __declspec(selectany) CLSID_BodyPackets =
+    {0xb3528481,0x0dd5,0x47aa,{0x96,0x9a,0x00,0x68,0x15,0x2c,0xbc,0x9d}};
+extern "C" const GUID __declspec(selectany) IID_IBodyPackets =
+    {0xf7f3d000,0xcbb7,0x41c0,{0x8d,0x89,0x60,0x51,0x7b,0x33,0x54,0x75}};
+extern "C" const GUID __declspec(selectany) CLSID_Primitive =
+    {0x23507b85,0xea6d,0x4cec,{0xb6,0x00,0x75,0x9c,0xee,0x3e,0x5e,0x04}};
+extern "C" const GUID __declspec(selectany) IID_IPrimitive =
+    {0xebdd5b58,0x3169,0x4d98,{0x84,0xf7,0x88,0xd1,0xde,0x9b,0xbf,0x85}};
+extern "C" const GUID __declspec(selectany) CLSID_D100_Wpt_Type =
+    {0x4c91c837,0xd229,0x4b4a,{0x97,0x09,0xd6,0xc0,0xf6,0x9b,0xc3,0x9e}};
+extern "C" const GUID __declspec(selectany) IID_ID100_Wpt_Type =
+    {0xe95d7cbd,0x4282,0x455c,{0x96,0x75,0xe7,0x84,0x29,0x92,0x4f,0x2a}};
+extern "C" const GUID __declspec(selectany) CLSID_D101_Wpt_Type =
+    {0x43f46bef,0x7111,0x4de7,{0xaf,0x7d,0x5e,0x99,0xf6,0x9b,0x70,0x40}};
+extern "C" const GUID __declspec(selectany) IID_ID101_Wpt_Type =
+    {0xe88fa770,0x0531,0x4501,{0xb7,0x76,0x5e,0x2d,0x2c,0xbe,0x65,0x57}};
+extern "C" const GUID __declspec(selectany) CLSID_D108_Wpt_Type =
+    {0xde648c25,0xfda6,0x4e41,{0x89,0xe0,0xc8,0xa2,0x18,0x6c,0x9b,0x2d}};
+extern "C" const GUID __declspec(selectany) IID_IGarminDataType =
+    {0xb892e0af,0x1d97,0x4d8f,{0x83,0x62,0x97,0x4e,0x81,0x10,0x15,0x51}};
+extern "C" const GUID __declspec(selectany) IID_IDXXX_Wpt_Type =
+    {0x159762e6,0x8b54,0x43b8,{0xac,0xb7,0x4f,0xe4,0xae,0x5b,0xdf,0xfb}};
+extern "C" const GUID __declspec(selectany) IID_ID108_Wpt_Type =
+    {0x7be71d06,0x70ac,0x406f,{0x86,0x3d,0xb3,0xac,0x86,0xdf,0xcc,0x81}};
+extern "C" const GUID __declspec(selectany) CLSID_D301_Trk_Point_Type =
+    {0x28d9cc60,0x6f9a,0x4cc9,{0xbc,0x0c,0x29,0x0c,0xa5,0x8c,0x3e,0x0b}};
+extern "C" const GUID __declspec(selectany) IID_IDXXX_Trk_Point_Type =
+    {0xb6e9b4d0,0x4823,0x426b,{0x9c,0x03,0xfa,0xf0,0xbb,0x14,0x81,0x51}};
+extern "C" const GUID __declspec(selectany) IID_ID301_Trk_Point_Type =
+    {0xcc178575,0x0663,0x49c0,{0xbd,0xef,0xb6,0x4c,0x5d,0x7b,0x93,0xb5}};
+extern "C" const GUID __declspec(selectany) CLSID_D600_Date_Time_Type =
+    {0x4a96c561,0xc3dc,0x4e9c,{0xb2,0xd9,0x98,0x5c,0x6d,0x98,0x53,0xae}};
+extern "C" const GUID __declspec(selectany) IID_ID600_Date_Time_Type =
+    {0x85540371,0x1db0,0x45d6,{0x89,0x16,0x59,0x2e,0xaf,0xab,0x1c,0xa7}};
+
+//
+// Wrapper method implementations
+//
+
+#include "garmin.tli"
+
+} // namespace Garmin
+
+#pragma pack(pop)

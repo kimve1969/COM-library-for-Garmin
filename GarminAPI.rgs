@@ -1,0 +1,26 @@
+HKCR
+{
+	Garmin.GarminAPI.1 = s 'GarminAPI Class'
+	{
+		CLSID = s '{DA52E280-436C-437C-B5A1-83FD35D263E5}'
+	}
+	Garmin.GarminAPI = s 'GarminAPI Class'
+	{
+		CLSID = s '{DA52E280-436C-437C-B5A1-83FD35D263E5}'
+		CurVer = s 'Garmin.GarminAPI.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {DA52E280-436C-437C-B5A1-83FD35D263E5} = s 'GarminAPI Class'
+		{
+			ProgID = s 'Garmin.GarminAPI.1'
+			VersionIndependentProgID = s 'Garmin.GarminAPI'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}

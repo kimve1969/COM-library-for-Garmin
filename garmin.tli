@@ -1,0 +1,1045 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (2eb9930b).
+//
+// garmin.tli
+//
+// Wrapper implementations for Win32 type library D:\Project C++\Garmin\garmin\Debug\garmin.dll
+// compiler-generated file created 09/10/04 at 19:33:56 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface ICommunication wrapper method implementations
+//
+
+inline HRESULT ICommunication::OpenPort ( _bstr_t bstrPort ) {
+    HRESULT _hr = raw_OpenPort(bstrPort);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ICommunication::ClosePort ( ) {
+    HRESULT _hr = raw_ClosePort();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IDispatchPtr ICommunication::ReadBodyPacket ( ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_ReadBodyPacket(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline HRESULT ICommunication::WriteBodyPacket ( IDispatch * pdisp ) {
+    HRESULT _hr = raw_WriteBodyPacket(pdisp);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ICommunication::Send ( IDispatch * pdisp ) {
+    HRESULT _hr = raw_Send(pdisp);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IDispatchPtr ICommunication::Reciver ( ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_Reciver(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline HRESULT ICommunication::Clear ( ) {
+    HRESULT _hr = raw_Clear();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IBodyPacket wrapper method implementations
+//
+
+inline _variant_t IBodyPacket::GetPacketID ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_PacketID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void IBodyPacket::PutPacketID ( const _variant_t & pVal ) {
+    HRESULT _hr = put_PacketID(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IBodyPacket::GetCount ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _variant_t IBodyPacket::GetStatus ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Status(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline HRESULT IBodyPacket::Add ( const _variant_t & Val ) {
+    HRESULT _hr = raw_Add(Val);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _variant_t IBodyPacket::Item ( const _variant_t & varIndx ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_Item(varIndx, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline HRESULT IBodyPacket::Clear ( ) {
+    HRESULT _hr = raw_Clear();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _variant_t IBodyPacket::GetACK ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_ACK(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _variant_t IBodyPacket::GetNAK ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_NAK(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline HRESULT IBodyPacket::SetACKPacket ( const _variant_t & varPacketID ) {
+    HRESULT _hr = raw_SetACKPacket(varPacketID);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IBodyPacket::SetNAKPacket ( const _variant_t & varPacketID ) {
+    HRESULT _hr = raw_SetNAKPacket(varPacketID);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IApplication wrapper method implementations
+//
+
+inline void IApplication::PutRefCommunication ( IDispatch * _arg1 ) {
+    HRESULT _hr = putref_Communication(_arg1);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline IDispatchPtr IApplication::GetProductData ( ) {
+    IDispatch * _result;
+    HRESULT _hr = get_ProductData(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline IDispatchPtr IApplication::GetProtocolArray ( ) {
+    IDispatch * _result;
+    HRESULT _hr = get_ProtocolArray(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline HRESULT IApplication::Cmnd_Abort_Transfer ( ) {
+    HRESULT _hr = raw_Cmnd_Abort_Transfer();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IApplication::Cmnd_Turn_Off_Pwr ( ) {
+    HRESULT _hr = raw_Cmnd_Turn_Off_Pwr();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IApplication::Cmnd_Start_Pvt_Data ( ) {
+    HRESULT _hr = raw_Cmnd_Start_Pvt_Data();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IApplication::Cmnd_Stop_Pvt_Data ( ) {
+    HRESULT _hr = raw_Cmnd_Stop_Pvt_Data();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IDispatchPtr IApplication::Cmnd_Get_Transfer_Alm ( ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_Cmnd_Get_Transfer_Alm(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline IDispatchPtr IApplication::Cmnd_Get_Transfer_Posn ( ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_Cmnd_Get_Transfer_Posn(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline IDispatchPtr IApplication::Cmnd_Get_Transfer_Prx ( ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_Cmnd_Get_Transfer_Prx(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline IDispatchPtr IApplication::Cmnd_Get_Transfer_Rte ( ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_Cmnd_Get_Transfer_Rte(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline IDispatchPtr IApplication::Cmnd_Get_Transfer_Time ( ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_Cmnd_Get_Transfer_Time(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline IDispatchPtr IApplication::Cmnd_Get_Transfer_Trk ( ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_Cmnd_Get_Transfer_Trk(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline IDispatchPtr IApplication::Cmnd_Get_Transfer_Wpt ( ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_Cmnd_Get_Transfer_Wpt(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline IDispatchPtr IApplication::Cmnd_Get_FlightBook_Transfer ( ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_Cmnd_Get_FlightBook_Transfer(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline IDispatchPtr IApplication::Cmnd_Get_Transfer_Laps ( ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_Cmnd_Get_Transfer_Laps(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline HRESULT IApplication::Cmnd_Set_Transfer_Alm ( IDispatch * pdisp ) {
+    HRESULT _hr = raw_Cmnd_Set_Transfer_Alm(pdisp);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IApplication::Cmnd_Set_Transfer_Posn ( IDispatch * pdisp ) {
+    HRESULT _hr = raw_Cmnd_Set_Transfer_Posn(pdisp);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IApplication::Cmnd_Set_Transfer_Prx ( IDispatch * pdisp ) {
+    HRESULT _hr = raw_Cmnd_Set_Transfer_Prx(pdisp);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IApplication::Cmnd_Set_Transfer_Rte ( IDispatch * pdisp ) {
+    HRESULT _hr = raw_Cmnd_Set_Transfer_Rte(pdisp);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IApplication::Cmnd_Set_Transfer_Time ( IDispatch * pdisp ) {
+    HRESULT _hr = raw_Cmnd_Set_Transfer_Time(pdisp);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IApplication::Cmnd_Set_Transfer_Trk ( IDispatch * pdisp ) {
+    HRESULT _hr = raw_Cmnd_Set_Transfer_Trk(pdisp);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IApplication::Cmnd_Set_Transfer_Wpt ( IDispatch * pdisp ) {
+    HRESULT _hr = raw_Cmnd_Set_Transfer_Wpt(pdisp);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IApplication::Cmnd_Set_FlightBook_Transfer ( IDispatch * pdisp ) {
+    HRESULT _hr = raw_Cmnd_Set_FlightBook_Transfer(pdisp);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IApplication::Cmnd_Set_Transfer_Laps ( IDispatch * pdisp ) {
+    HRESULT _hr = raw_Cmnd_Set_Transfer_Laps(pdisp);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IDispatchPtr IApplication::CreateBodyPacket ( _bstr_t pid_name ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_CreateBodyPacket(pid_name, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline long IApplication::GetNative ( ) {
+    long _result;
+    HRESULT _hr = get_Native(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IApplication::PutNative ( long pVal ) {
+    HRESULT _hr = put_Native(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface IProtocolArray wrapper method implementations
+//
+
+inline _variant_t IProtocolArray::Item ( long indx ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_Item(indx, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IProtocolArray::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IProtocolArray::GetWaypoint_Transfer_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Waypoint_Transfer_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetRoute_Transfer_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Route_Transfer_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetTrack_Log_Transfer_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Track_Log_Transfer_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetProximity_Waypoint_Transfer_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Proximity_Waypoint_Transfer_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetAlmanac_Transfer_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Almanac_Transfer_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetDate_and_Time_Initialization_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Date_and_Time_Initialization_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetFlightBook_Transfer_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_FlightBook_Transfer_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetPosition_Initialization_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Position_Initialization_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetPVT_Data_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_PVT_Data_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetLap_Transfer_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Lap_Transfer_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetLink_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Link_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetDevice_Command_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Device_Command_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetPhysical_Protocol ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Physical_Protocol(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetWaypoint_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Waypoint_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetRoute_Header_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Route_Header_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetRoute_Waypoint_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Route_Waypoint_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetRoute_Link_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Route_Link_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetAlmanac_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Almanac_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetTrack_Header_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Track_Header_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetTrack_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Track_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetPVT_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_PVT_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetFlightBook_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_FlightBook_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetLap_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Lap_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetPosition_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Position_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetDate_Time_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Date_Time_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IProtocolArray::GetProximity_Waypoint_Data_Type ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Proximity_Waypoint_Data_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+//
+// interface IProductData wrapper method implementations
+//
+
+inline int IProductData::Getproduct_ID ( ) {
+    int _result;
+    HRESULT _hr = get_product_ID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IProductData::Getsoftware_version ( ) {
+    int _result;
+    HRESULT _hr = get_software_version(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _variant_t IProductData::Getproduct_description ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_product_description(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+//
+// interface IBodyPackets wrapper method implementations
+//
+
+inline IDispatchPtr IBodyPackets::Item ( long index ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_Item(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline long IBodyPackets::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IBodyPackets::Add ( IDispatch * pnewBodyPacket ) {
+    HRESULT _hr = raw_Add(pnewBodyPacket);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IBodyPackets::Remove ( long index ) {
+    HRESULT _hr = raw_Remove(index);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IUnknownPtr IBodyPackets::Get_NewEnum ( ) {
+    IUnknown * _result;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+//
+// interface IPrimitive wrapper method implementations
+//
+
+inline HRESULT IPrimitive::Add ( const _variant_t & Val ) {
+    HRESULT _hr = raw_Add(Val);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IPrimitive::Clear ( ) {
+    HRESULT _hr = raw_Clear();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _variant_t IPrimitive::GetCount ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline float IPrimitive::Getgfloat ( ) {
+    float _result;
+    HRESULT _hr = get_gfloat(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IPrimitive::Putgfloat ( float pVal ) {
+    HRESULT _hr = put_gfloat(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IPrimitive::Getgdouble ( ) {
+    double _result;
+    HRESULT _hr = get_gdouble(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IPrimitive::Putgdouble ( double pVal ) {
+    HRESULT _hr = put_gdouble(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IPrimitive::Getglong ( ) {
+    long _result;
+    HRESULT _hr = get_glong(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IPrimitive::Putglong ( long pVal ) {
+    HRESULT _hr = put_glong(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline short IPrimitive::Getgint ( ) {
+    short _result;
+    HRESULT _hr = get_gint(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IPrimitive::Putgint ( short pVal ) {
+    HRESULT _hr = put_gint(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned short IPrimitive::Getgword ( ) {
+    unsigned short _result;
+    HRESULT _hr = get_gword(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IPrimitive::Putgword ( unsigned short pVal ) {
+    HRESULT _hr = put_gword(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned long IPrimitive::Getglongword ( ) {
+    unsigned long _result;
+    HRESULT _hr = get_glongword(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IPrimitive::Putglongword ( unsigned long pVal ) {
+    HRESULT _hr = put_glongword(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IPrimitive::Item ( long indx ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_Item(indx, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IPrimitive::Getgsemicircles ( ) {
+    long _result;
+    HRESULT _hr = get_gsemicircles(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IPrimitive::Putgsemicircles ( long pVal ) {
+    HRESULT _hr = put_gsemicircles(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IPrimitive::Getgradians ( ) {
+    double _result;
+    HRESULT _hr = get_gradians(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IPrimitive::Putgradians ( double pVal ) {
+    HRESULT _hr = put_gradians(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IPrimitive::Getgdegrees_from_semicircles ( ) {
+    double _result;
+    HRESULT _hr = get_gdegrees_from_semicircles(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IPrimitive::Getgdegrees_from_radians ( ) {
+    double _result;
+    HRESULT _hr = get_gdegrees_from_radians(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IPrimitive::Putgdegrees ( double _arg1 ) {
+    HRESULT _hr = put_gdegrees(_arg1);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface IGarminDataType wrapper method implementations
+//
+
+inline _bstr_t IGarminDataType::GetType ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline IDispatchPtr IGarminDataType::GetIDXXX_Type ( ) {
+    IDispatch * _result;
+    HRESULT _hr = get_IDXXX_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+//
+// interface IDXXX_Wpt_Type wrapper method implementations
+//
+
+inline _bstr_t IDXXX_Wpt_Type::Getident ( ) {
+    BSTR _result;
+    HRESULT _hr = get_ident(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IDXXX_Wpt_Type::Putident ( _bstr_t pVal ) {
+    HRESULT _hr = put_ident(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IDXXX_Wpt_Type::Getlon ( ) {
+    long _result;
+    HRESULT _hr = get_lon(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IDXXX_Wpt_Type::Putlon ( long pVal ) {
+    HRESULT _hr = put_lon(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IDXXX_Wpt_Type::Getlat ( ) {
+    long _result;
+    HRESULT _hr = get_lat(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IDXXX_Wpt_Type::Putlat ( long pVal ) {
+    HRESULT _hr = put_lat(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface ID108_Wpt_Type wrapper method implementations
+//
+
+inline unsigned int ID108_Wpt_Type::Getcolor ( ) {
+    unsigned int _result;
+    HRESULT _hr = get_color(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID108_Wpt_Type::Putcolor ( unsigned int pVal ) {
+    HRESULT _hr = put_color(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned int ID108_Wpt_Type::Getwpt_class ( ) {
+    unsigned int _result;
+    HRESULT _hr = get_wpt_class(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID108_Wpt_Type::Putwpt_class ( unsigned int pVal ) {
+    HRESULT _hr = put_wpt_class(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned int ID108_Wpt_Type::Getdspl ( ) {
+    unsigned int _result;
+    HRESULT _hr = get_dspl(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID108_Wpt_Type::Putdspl ( unsigned int pVal ) {
+    HRESULT _hr = put_dspl(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned int ID108_Wpt_Type::Getattr ( ) {
+    unsigned int _result;
+    HRESULT _hr = get_attr(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID108_Wpt_Type::Putattr ( unsigned int pVal ) {
+    HRESULT _hr = put_attr(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline int ID108_Wpt_Type::Getsmbl ( ) {
+    int _result;
+    HRESULT _hr = get_smbl(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID108_Wpt_Type::Putsmbl ( int pVal ) {
+    HRESULT _hr = put_smbl(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float ID108_Wpt_Type::Getalt ( ) {
+    float _result;
+    HRESULT _hr = get_alt(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID108_Wpt_Type::Putalt ( float pVal ) {
+    HRESULT _hr = put_alt(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float ID108_Wpt_Type::Getdpth ( ) {
+    float _result;
+    HRESULT _hr = get_dpth(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID108_Wpt_Type::Putdpth ( float pVal ) {
+    HRESULT _hr = put_dpth(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float ID108_Wpt_Type::Getdist ( ) {
+    float _result;
+    HRESULT _hr = get_dist(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID108_Wpt_Type::Putdist ( float pVal ) {
+    HRESULT _hr = put_dist(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface IDXXX_Trk_Point_Type wrapper method implementations
+//
+
+inline long IDXXX_Trk_Point_Type::Getlat ( ) {
+    long _result;
+    HRESULT _hr = get_lat(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IDXXX_Trk_Point_Type::Putlat ( long pVal ) {
+    HRESULT _hr = put_lat(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IDXXX_Trk_Point_Type::Getlon ( ) {
+    long _result;
+    HRESULT _hr = get_lon(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IDXXX_Trk_Point_Type::Putlon ( long pVal ) {
+    HRESULT _hr = put_lon(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned long IDXXX_Trk_Point_Type::Gettime ( ) {
+    unsigned long _result;
+    HRESULT _hr = get_time(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IDXXX_Trk_Point_Type::Puttime ( unsigned long pVal ) {
+    HRESULT _hr = put_time(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface ID301_Trk_Point_Type wrapper method implementations
+//
+
+inline float ID301_Trk_Point_Type::Getalt ( ) {
+    float _result;
+    HRESULT _hr = get_alt(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID301_Trk_Point_Type::Putalt ( float pVal ) {
+    HRESULT _hr = put_alt(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline float ID301_Trk_Point_Type::Getdpth ( ) {
+    float _result;
+    HRESULT _hr = get_dpth(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID301_Trk_Point_Type::Putdpth ( float pVal ) {
+    HRESULT _hr = put_dpth(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ID301_Trk_Point_Type::Getnew_trk ( ) {
+    long _result;
+    HRESULT _hr = get_new_trk(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID301_Trk_Point_Type::Putnew_trk ( long pVal ) {
+    HRESULT _hr = put_new_trk(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface ID600_Date_Time_Type wrapper method implementations
+//
+
+inline unsigned int ID600_Date_Time_Type::Getmonth ( ) {
+    unsigned int _result;
+    HRESULT _hr = get_month(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID600_Date_Time_Type::Putmonth ( unsigned int pVal ) {
+    HRESULT _hr = put_month(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned int ID600_Date_Time_Type::Getday ( ) {
+    unsigned int _result;
+    HRESULT _hr = get_day(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID600_Date_Time_Type::Putday ( unsigned int pVal ) {
+    HRESULT _hr = put_day(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned int ID600_Date_Time_Type::Getyear ( ) {
+    unsigned int _result;
+    HRESULT _hr = get_year(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID600_Date_Time_Type::Putyear ( unsigned int pVal ) {
+    HRESULT _hr = put_year(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned int ID600_Date_Time_Type::Gethour ( ) {
+    unsigned int _result;
+    HRESULT _hr = get_hour(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID600_Date_Time_Type::Puthour ( unsigned int pVal ) {
+    HRESULT _hr = put_hour(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned int ID600_Date_Time_Type::Getminute ( ) {
+    unsigned int _result;
+    HRESULT _hr = get_minute(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID600_Date_Time_Type::Putminute ( unsigned int pVal ) {
+    HRESULT _hr = put_minute(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned int ID600_Date_Time_Type::Getsecond ( ) {
+    unsigned int _result;
+    HRESULT _hr = get_second(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ID600_Date_Time_Type::Putsecond ( unsigned int pVal ) {
+    HRESULT _hr = put_second(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}

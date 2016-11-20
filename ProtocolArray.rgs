@@ -1,0 +1,26 @@
+HKCR
+{
+	Garmin.ProtocolArray.1 = s 'ProtocolArray Class'
+	{
+		CLSID = s '{CCF8E6BB-01E6-4CBD-892F-F0021C98BC6D}'
+	}
+	Garmin.ProtocolArray = s 'ProtocolArray Class'
+	{
+		CLSID = s '{CCF8E6BB-01E6-4CBD-892F-F0021C98BC6D}'
+		CurVer = s 'Garmin.ProtocolArray.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {CCF8E6BB-01E6-4CBD-892F-F0021C98BC6D} = s 'ProtocolArray Class'
+		{
+			ProgID = s 'Garmin.ProtocolArray.1'
+			VersionIndependentProgID = s 'Garmin.ProtocolArray'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}

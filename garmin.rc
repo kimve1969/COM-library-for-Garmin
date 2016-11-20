@@ -1,0 +1,180 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_COMMUNICATION       REGISTRY DISCARDABLE    "Communication.rgs"
+IDR_BODYPACKET          REGISTRY DISCARDABLE    "BodyPacket.rgs"
+IDR_APPLICATION         REGISTRY DISCARDABLE    "Application.rgs"
+IDR_PROTOCOLARRAY       REGISTRY DISCARDABLE    "ProtocolArray.rgs"
+IDR_PRODUCTDATA         REGISTRY DISCARDABLE    "ProductData.rgs"
+IDR_BODYPACKETS         REGISTRY DISCARDABLE    "BodyPackets.rgs"
+IDR_PRIMITIVE           REGISTRY DISCARDABLE    "Primitive.rgs"
+IDR_D100_WPT_TYPE       REGISTRY DISCARDABLE    "D100_Wpt_Type.rgs"
+IDR_D101_WPT_TYPE       REGISTRY DISCARDABLE    "D101_Wpt_Type.rgs"
+IDR_D108_WPT_TYPE       REGISTRY DISCARDABLE    "D108_Wpt_Type.rgs"
+IDR_D301_TRK_POINT_TYPE REGISTRY DISCARDABLE    "D301_Trk_Point_Type.rgs"
+IDR_D600_DATE_TIME_TYPE REGISTRY DISCARDABLE    "D600_Date_Time_Type.rgs"
+IDR_D102_WPT_TYPE       REGISTRY DISCARDABLE    "D102_Wpt_Type.rgs"
+IDR_D103_WPT_TYPE       REGISTRY DISCARDABLE    "D103_Wpt_Type.rgs"
+IDR_D104_WPT_TYPE       REGISTRY DISCARDABLE    "D104_Wpt_Type.rgs"
+IDR_D105_WPT_TYPE       REGISTRY DISCARDABLE    "D105_Wpt_Type.rgs"
+IDR_D106_WPT_TYPE       REGISTRY DISCARDABLE    "D106_Wpt_Type.rgs"
+IDR_D107_WPT_TYPE       REGISTRY DISCARDABLE    "D107_Wpt_Type.rgs"
+IDR_D109_WPT_TYPE       REGISTRY DISCARDABLE    "D109_Wpt_Type.rgs"
+IDR_D110_WPT_TYPE       REGISTRY DISCARDABLE    "D110_Wpt_Type.rgs"
+IDR_D150_WPT_TYPE       REGISTRY DISCARDABLE    "D150_Wpt_Type.rgs"
+IDR_D151_WPT_TYPE       REGISTRY DISCARDABLE    "D151_Wpt_Type.rgs"
+IDR_D152_WPT_TYPE       REGISTRY DISCARDABLE    "D152_Wpt_Type.rgs"
+IDR_D154_WPT_TYPE       REGISTRY DISCARDABLE    "D154_Wpt_Type.rgs"
+IDR_D155_WPT_TYPE       REGISTRY DISCARDABLE    "D155_Wpt_Type.rgs"
+IDR_D200_RTE_HDR_TYPE   REGISTRY DISCARDABLE    "D200_Rte_Hdr_Type.rgs"
+IDR_D201_RTE_HDR_TYPE   REGISTRY DISCARDABLE    "D201_Rte_Hdr_Type.rgs"
+IDR_D202_RTE_HDR_TYPE   REGISTRY DISCARDABLE    "D202_Rte_Hdr_Type.rgs"
+IDR_D210_RTE_LINK_TYPE  REGISTRY DISCARDABLE    "D210_Rte_Link_Type.rgs"
+IDR_D300_TRK_POINT_TYPE REGISTRY DISCARDABLE    "D300_Trk_Point_Type.rgs"
+IDR_D302_TRK_POINT_TYPE REGISTRY DISCARDABLE    "D302_Trk_Point_Type.rgs"
+IDR_D310_TRK_HDR_TYPE   REGISTRY DISCARDABLE    "D310_Trk_Hdr_Type.rgs"
+IDR_D311_TRK_HDR_TYPE   REGISTRY DISCARDABLE    "D311_Trk_Hdr_Type.rgs"
+IDR_D312_TRK_HDR_TYPE   REGISTRY DISCARDABLE    "D312_Trk_Hdr_Type.rgs"
+IDR_D400_PRX_WPT_TYPE   REGISTRY DISCARDABLE    "D400_Prx_Wpt_Type.rgs"
+IDR_D403_PRX_WPT_TYPE   REGISTRY DISCARDABLE    "D403_Prx_Wpt_Type.rgs"
+IDR_D450_PRX_WPT_TYPE   REGISTRY DISCARDABLE    "D450_Prx_Wpt_Type.rgs"
+IDR_D500_ALMANAC_TYPE   REGISTRY DISCARDABLE    "D500_Almanac_Type.rgs"
+IDR_D501_ALMANAC_TYPE   REGISTRY DISCARDABLE    "D501_Almanac_Type.rgs"
+IDR_D550_ALMANAC_TYPE   REGISTRY DISCARDABLE    "D550_Almanac_Type.rgs"
+IDR_D551_ALMANAC_TYPE   REGISTRY DISCARDABLE    "D551_Almanac_Type.rgs"
+IDR_D650_FLIGHTBOOK_RECORD_TYPE REGISTRY DISCARDABLE    "D650_FlightBook_Record_Type.rgs"
+IDR_D700_POSITION_TYPE  REGISTRY DISCARDABLE    "D700_Position_Type.rgs"
+IDR_D800_PVT_DATA_TYPE  REGISTRY DISCARDABLE    "D800_Pvt_Data_Type.rgs"
+IDR_D906_LAP_TYPE       REGISTRY DISCARDABLE    "D906_Lap_Type.rgs"
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "1 TYPELIB ""garmin.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "garmin Module\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "garmin\0"
+            VALUE "LegalCopyright", "Copyright 2004\0"
+            VALUE "OriginalFilename", "garmin.DLL\0"
+            VALUE "ProductName", "garmin Module\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "OLESelfRegister", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROJNAME            "garmin"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "garmin.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

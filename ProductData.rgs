@@ -1,0 +1,26 @@
+HKCR
+{
+	Garmin.ProductData.1 = s 'ProductData Class'
+	{
+		CLSID = s '{27FB9C7C-881D-4342-8C95-B64789C12968}'
+	}
+	Garmin.ProductData = s 'ProductData Class'
+	{
+		CLSID = s '{27FB9C7C-881D-4342-8C95-B64789C12968}'
+		CurVer = s 'Garmin.ProductData.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {27FB9C7C-881D-4342-8C95-B64789C12968} = s 'ProductData Class'
+		{
+			ProgID = s 'Garmin.ProductData.1'
+			VersionIndependentProgID = s 'Garmin.ProductData'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{D045DCC4-CCC5-434B-97E6-76A2D9FE01EA}'
+		}
+	}
+}
